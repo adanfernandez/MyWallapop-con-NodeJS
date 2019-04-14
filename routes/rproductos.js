@@ -1,25 +1,17 @@
-module.exports = function(app, swig, mongo) {
+module.exports = function(app, swig, gestorBD) {
     app.post("/producto", function(req, res) {
+
         var producto = {
             nombre : req.body.nombre,
             descripcion : req.body.descripcion,
             precio : req.body.precio
-        }
-
+        };
         // Conectarse
-        mongo.MongoClient.connect(app.get('db'), function(err, db) {
-            if (err) {
-                res.send("Error de conexión: " + err);
+        gestorBD.insertarProducto(producto, function(id){
+            if (id == null) {
+                res.send("Error al insertar producto");
             } else {
-                var collection = db.collection('productos');
-                collection.insert(producto, function(err, result) {
-                    if (err) {
-                        res.send("Error al insertar " + err);
-                    } else {
-                        res.send("Agregada id: "+ result.ops[0]._id);
-                    }
-                    db.close();
-                });
+                res.send("Producto agregado: " + id);
             }
         });
 

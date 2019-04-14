@@ -1,8 +1,30 @@
-module.exports = function(app, swig) {
+module.exports = function(app, swig, mongo) {
     app.post("/producto", function(req, res) {
-        res.send("Nombre:"+req.body.nombre +"<br>"
-            +" precio: "+req.body.precio);
+        var producto = {
+            nombre : req.body.nombre,
+            descripcion : req.body.descripcion,
+            precio : req.body.precio
+        }
+
+        // Conectarse
+        mongo.MongoClient.connect(app.get('db'), function(err, db) {
+            if (err) {
+                res.send("Error de conexión: " + err);
+            } else {
+                var collection = db.collection('productos');
+                collection.insert(producto, function(err, result) {
+                    if (err) {
+                        res.send("Error al insertar " + err);
+                    } else {
+                        res.send("Agregada id: "+ result.ops[0]._id);
+                    }
+                    db.close();
+                });
+            }
+        });
+
     });
+
 
     app.get('/productos/agregar', function (req, res) {
         var respuesta = swig.renderFile('views/bagregar.html', {

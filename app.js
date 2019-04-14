@@ -1,6 +1,12 @@
 // Módulos
 var express = require('express');
 var app = express();
+var expressSession = require('express-session');
+app.use(expressSession({
+    secret: 'sdi123456789',
+    resave: true,
+    saveUninitialized: true
+}));
 var crypto = require('crypto');
 var fileUpload = require('express-fileupload');
 app.use(fileUpload());
@@ -13,6 +19,20 @@ var gestorBDProductos = require("./modules/gestorBDProductos.js");
 var gestorBDUsuarios = require("./modules/gestorBDUsuarios.js");
 gestorBDProductos.init(app, mongo);
 gestorBDUsuarios.init(app, mongo);
+// routerUsuarioSession
+var routerUsuarioSession = express.Router();
+routerUsuarioSession.use(function(req, res, next) {
+    console.log("routerUsuarioSession");
+    if ( req.session.usuario ) {
+        // dejamos correr la petición
+        next();
+    } else {
+        res.redirect("/identificarse");
+    }
+});
+//Aplicar routerUsuarioSession
+app.use("/productos/agregar",routerUsuarioSession);
+app.use("/publicaciones",routerUsuarioSession);
 app.use(express.static('public'));
 // Variables
 app.set('port', 8081);

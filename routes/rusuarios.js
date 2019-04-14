@@ -9,6 +9,10 @@ module.exports = function(app, swig, gestorBDUsuarios) {
         res.send(respuesta);
     });
     app.post('/usuario', function(req, res) {
+        if(req.body.password !== req.body.passwordConfirm){
+            res.redirect("/registrarse?mensaje=Las contraseñas deben coincidir");
+            return;
+        }
         var seguro = app.get("crypto").createHmac('sha256', app.get('clave'))
             .update(req.body.password).digest('hex');
         var usuario = {
@@ -42,13 +46,19 @@ module.exports = function(app, swig, gestorBDUsuarios) {
         var criterio = {
             email : req.body.email,
             password : seguro
-        }
+        };
         gestorBDUsuarios.obtenerUsuarios(criterio, function(usuarios) {
             if (usuarios == null || usuarios.length == 0) {
+                req.session.usuario = null;
                 res.send("No identificado: ");
             } else {
+                req.session.usuario = usuarios[0].email;
                 res.send("identificado");
             }
         });
+    });
+    app.get('/desconectarse', function (req, res) {
+        req.session.usuario = null;
+        res.send("Usuario desconectado");
     });
 };

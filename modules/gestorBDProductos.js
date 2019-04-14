@@ -22,17 +22,34 @@ module.exports = {
             }
         });
     },
-    insertarProducto : function(cancion, funcionCallback) {
+    insertarProducto : function(producto, funcionCallback) {
         this.mongo.MongoClient.connect(this.app.get('db'), function(err, db) {
             if (err) {
                 funcionCallback(null);
             } else {
                 var collection = db.collection('productos');
-                collection.insert(cancion, function(err, result) {
+                collection.insert(producto, function(err, result) {
                     if (err) {
                         funcionCallback(null);
                     } else {
                         funcionCallback(result.ops[0]._id);
+                    }
+                    db.close();
+                });
+            }
+        });
+    },
+    modificarProducto : function(criterio, producto, funcionCallback) {
+        this.mongo.MongoClient.connect(this.app.get('db'), function(err, db) {
+            if (err) {
+                funcionCallback(null);
+            } else {
+                var collection = db.collection('productos');
+                collection.update(criterio, {$set: producto}, function(err, result) {
+                    if (err) {
+                        funcionCallback(null);
+                    } else {
+                        funcionCallback(result);
                     }
                     db.close();
                 });

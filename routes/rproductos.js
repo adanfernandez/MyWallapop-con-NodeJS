@@ -6,8 +6,8 @@ module.exports = function(app, swig, gestorBDProductos) {
             descripcion : req.body.descripcion,
             precio : req.body.precio,
             fecha: date.getUTCDate() + '/' + (date.getUTCMonth() + 1) + '/' + date.getFullYear(),
-            propietario : '',
-            comprador : ""
+            propietario : req.session.usuario,
+            comprador : null
         };
         gestorBDProductos.insertarProducto(producto, function(id){
             if (id == null) {
@@ -64,5 +64,68 @@ module.exports = function(app, swig, gestorBDProductos) {
                 res.send(respuesta);
             }
         });
-    })
+    });
+    app.get("/publicaciones", function(req, res) {
+        var criterio = { propietario : req.session.usuario };
+        gestorBDProductos.obtenerProductos(criterio, function(productos) {
+            if (productos == null) {
+                res.send("Error al listar ");
+            } else {
+                var respuesta = swig.renderFile('views/bpublicaciones.html',
+                    {
+                        productos : productos
+                    });
+                res.send(respuesta);
+            }
+        });
+    });
+    app.get('/producto/modificar/:id', function (req, res) {
+        var criterio = { "_id" : gestorBDProductos.mongo.ObjectID(req.params.id) };
+        gestorBDProductos.obtenerProductos(criterio,function(productos){
+            if ( productos == null ){
+                res.send(respuesta);
+            } else {
+                var respuesta = swig.renderFile('views/bproductoModificar.html',
+                    {
+                        producto : productos[0]
+                    });
+                res.send(respuesta);
+            }
+        });
+    });
+    app.post('/producto/modificar/:id', function (req, res) {
+        var id = req.params.id;
+        var criterio = { "_id" : gestorBDProductos.mongo.ObjectID(id) };
+        var producto = {
+            nombre : req.body.nombre,
+            descripcion : req.body.descripcion,
+            precio : req.body.precio
+        }
+        gestorBDProductos.modificarProducto(criterio, producto, function(result) {
+            if (result == null) {
+                res.send("Error al modificar ");
+            } else {
+                modificarFoto(req.files, id, function (result) {
+                    if( result == null){
+                        res.send("Error en la modificación");
+                    } else {
+                        res.send("Modificado");
+                    }
+                });
+            }
+        });
+    });
+    function modificarFoto(files, id, callback) {
+        if (files.portada != null) {
+            var imagen = files.portada;
+            imagen.mv('public/portadas/' + id + '.png', function (err) {
+                if (err) {
+                    callback(null); // ERROR
+                } else {
+                    callback(true);
+                }
+            });
+        }
+        ;
+    };
 };

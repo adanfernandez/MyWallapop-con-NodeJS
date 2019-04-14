@@ -5,6 +5,23 @@ module.exports = {
         this.mongo = mongo;
         this.app = app;
     },
+    obtenerProductos : function(criterio, funcionCallback){
+        this.mongo.MongoClient.connect(this.app.get('db'), function(err, db) {
+            if (err) {
+                funcionCallback(null);
+            } else {
+                var collection = db.collection('productos');
+                collection.find(criterio).toArray(function(err, productos) {
+                    if (err) {
+                        funcionCallback(null);
+                    } else {
+                        funcionCallback(productos);
+                    }
+                    db.close();
+                });
+            }
+        });
+    },
     insertarProducto : function(cancion, funcionCallback) {
         this.mongo.MongoClient.connect(this.app.get('db'), function(err, db) {
             if (err) {

@@ -33,6 +33,8 @@ routerUsuarioSession.use(function(req, res, next) {
 //Sólo podrán agregar canciones y acceder a publicaciones los usuarios registrados y loggeados.
 app.use("/productos/agregar",routerUsuarioSession);
 app.use("/publicaciones",routerUsuarioSession);
+app.use("/producto/comprar",routerUsuarioSession);
+app.use("/compras",routerUsuarioSession);
 //routerUsuarioPropietario
 var routerUsuarioPropietario = express.Router();
 routerUsuarioPropietario.use(function(req, res, next) {
@@ -62,7 +64,7 @@ app.set('clave','sdi123456789');
 app.set('crypto', crypto);
 //Rutas/controladores por lógica
 require("./routes/rusuarios.js")(app, swig, gestorBDUsuarios);
-require("./routes/rproductos.js")(app, swig, gestorBDProductos);
+require("./routes/rproductos.js")(app, swig, gestorBDProductos, gestorBDUsuarios);
 // lanzar el servidor
 app.listen(app.get('port'), function() {
     console.log("Servidor activo");

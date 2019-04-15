@@ -1,4 +1,4 @@
-module.exports = function(app, swig, gestorBDProductos) {
+module.exports = function(app, swig, gestorBDProductos, gestorBDUsuarios) {
     app.post("/producto", function(req, res) {
         var date = new Date();
         var producto = {
@@ -11,8 +11,9 @@ module.exports = function(app, swig, gestorBDProductos) {
         };
         gestorBDProductos.insertarProducto(producto, function(id){
             if (id == null) {
-                res.send("Error al insertar producto");
-            } else {
+                res.redirect("/productos/agregar" +
+                    "?mensaje=Error al insertar el producto"+
+                    "&tipoMensaje=alert-danger ");            } else {
                 if (req.files.imagen != null) {
                     var imagen = req.files.imagen;
                     imagen.mv('public/portadas/' + id + '.png', function(err) {
@@ -25,7 +26,6 @@ module.exports = function(app, swig, gestorBDProductos) {
                 }
             }
         });
-
     });
     app.get('/productos/agregar', function (req, res) {
         var respuesta = swig.renderFile('views/bagregar.html', {
@@ -142,5 +142,71 @@ module.exports = function(app, swig, gestorBDProductos) {
                 res.redirect("/publicaciones");
             }
         });
-    })
+    });
+
+    app.get('/producto/comprar/:id', function (req, res) {
+        var productoId = gestorBDProductos.mongo.ObjectID(req.params.id);
+        var criterio = {
+            "_id" : productoId
+        };
+        var producto = {
+            "comprador" : req.session.usuario
+        };
+        gestorBDProductos.obtenerProductos(criterio, function (productos) {
+                if (productos == null) {
+                    res.redirect("/tienda?mensaje=Ha ocurrido un error");
+                } else {
+                    var criterio_usuario = {
+                        email : req.session.usuario
+                    };
+                    gestorBDUsuarios.obtenerUsuarios(criterio_usuario, function(usuarios)
+                        {
+                            if(productos[0].precio > usuarios[0].dinero)
+                            {
+                                res.redirect("/tienda?mensaje=No posee suficiente dinero");
+                            }
+                            else
+                            {
+                                if (productos[0].propietario !== req.session.usuario && productos[0].comprador == null) {
+                                    gestorBDProductos.modificarProducto(criterio, producto, function (idCompra) {
+                                        if (idCompra == null) {
+                                            res.redirect("/tienda?mensaje=Ha ocurrido un error");
+                                        } else {
+                                            actualizacion_usuario = {
+                                                dinero : usuarios[0].dinero - productos[0].precio
+                                            };
+                                            gestorBDUsuarios.modificarUsuarios(criterio_usuario, actualizacion_usuario, function (users) {
+                                                    if(users == null)
+                                                        res.redirect("/tienda?mensaje=Ha ocurrido un error");
+                                                    else
+                                                        res.redirect("/compras");
+                                                }
+                                            );
+                                        }
+                                    });
+                                } else {
+                                    res.redirect("/tienda?mensaje=El producto ya ha sido adquirido por otro usuario");
+                                }
+                            }
+                        }
+                    );
+                }
+            });
+    });
+    app.get('/compras', function (req, res) {
+        var criterio = { "comprador" : req.session.usuario };
+        gestorBDProductos.obtenerProductos( criterio, function(productos) {
+            if (productos == null) {
+                res.send("Error al listar productos");
+            } else {
+                var respuesta = swig.renderFile('views/bcompras.html',
+                    {
+                        productos : productos
+                    });
+                res.send(respuesta);
+            }
+        });
+    });
+
+
 };

@@ -1,4 +1,4 @@
-{% extends "base.html" %} 
+<!--{% extends "base.html" %}
 
 {% block titulo %} Detalles de  {{ producto.nombre }} {% endblock %}
 
@@ -11,24 +11,53 @@
 		  </div>
 		  <div class="media-body">
 			  <p>{{ producto.descripción }}</p>
-			 <button type="button" class="btn btn-primary pull-right">{{ producto.precio }}</button>
-			 <!-- Cambiar el precio por "reproducir" si ya está comprada -->
 		  </div>
+			<div class="media-body">
+				<p>{{ producto.precio }} €</p>
+			</div>
+			<a class="btn btn-primary pull-right"
+			   href="/producto/comprar/{{producto._id.toString()}}"> Comprar </a>
 		</div>
 	  </div>
-	  
-	 <!-- -->
-	 <div class="row" style="margin-top: 20px;" >
-		<div class="media col-xs-10">
-			  <div class="media-left media-middle">
-			  </div>
-			  <div class="media-body">
-				<h4 class="media-heading">Descripción</h4>
-				  {{ producto.descripcion }}
-			  </div>
-		  </div>
+{% endblock %} -->
 
-		  </div>
+{% extends "base.html" %}
 
-	  </div>
+{% block titulo %} Detalles de  {{ producto.nombre }} {% endblock %}
+
+{% block contenido_principal %}
+
+
+<div class="container">
+	<h2 th:text="#{details.message}">Detalles del producto</h2>
+
+	<div class="panel panel-default">
+		<div class="panel-heading">Título</div>
+		<div class="panel-body">{{producto.nombre}}</div>
+	</div>
+
+	<div class="panel panel-default">
+		<div class="panel-heading">Descipción</div>
+		<div class="panel-body">{{producto.descripcion}}</div>
+	</div>
+
+	<div class="panel panel-default">
+		<div class="panel-heading">Precio</div>
+		<div class="panel-body">{{producto.precio}}</div>
+	</div>
+
+	<div class="panel panel-default">
+		<div class="panel-heading">Fecha</div>
+		<div class="panel-body">{{producto.fecha}}</div>
+	</div>
+	<div class="media-left media-middle">
+		<img class="media-object" src="/portadas/{{ producto._id.toString() }}.png" />
+
+	</div>
+	<div>
+		<a class="btn btn-primary pull-center" style="margin-top: 50px"
+		   href="/producto/comprar/{{producto._id.toString()}}"> Comprar </a>
+	</div>
+</div>
+
 {% endblock %}

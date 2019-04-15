@@ -30,9 +30,27 @@ routerUsuarioSession.use(function(req, res, next) {
         res.redirect("/identificarse");
     }
 });
-//Aplicar routerUsuarioSession
+//Sólo podrán agregar canciones y acceder a publicaciones los usuarios registrados y loggeados.
 app.use("/productos/agregar",routerUsuarioSession);
 app.use("/publicaciones",routerUsuarioSession);
+//routerUsuarioAutor
+var routerUsuarioAutor = express.Router();
+routerUsuarioAutor.use(function(req, res, next) {
+    var path = require('path');
+    var id = path.basename(req.originalUrl);
+    gestorBDProductos.obtenerProductos(
+        {_id: mongo.ObjectID(id) }, function (productos) {
+            console.log(productos[0]);
+            if(productos[0].propietario == req.session.usuario ){
+                next();
+            } else {
+                res.redirect("/tienda");
+            }
+        })
+});
+//Solo podrán modificar y eliminar productos sus propietarios
+app.use("/producto/modificar",routerUsuarioAutor);
+app.use("/producto/eliminar",routerUsuarioAutor);
 app.use(express.static('public'));
 // Variables
 app.set('port', 8081);

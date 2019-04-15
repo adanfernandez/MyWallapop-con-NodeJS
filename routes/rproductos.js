@@ -126,6 +126,15 @@ module.exports = function(app, swig, gestorBDProductos) {
                 }
             });
         }
-        ;
-    };
+    }
+    app.get('/producto/eliminar/:id', function (req, res) {
+        var criterio = {"_id" : gestorBDProductos.mongo.ObjectID(req.params.id) };
+        gestorBDProductos.eliminarProducto(criterio,function(productos){
+            if ( productos == null ){
+                res.send(respuesta);
+            } else {
+                res.redirect("/publicaciones");
+            }
+        });
+    })
 };

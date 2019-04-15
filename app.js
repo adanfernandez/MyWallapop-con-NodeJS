@@ -33,9 +33,9 @@ routerUsuarioSession.use(function(req, res, next) {
 //Sólo podrán agregar canciones y acceder a publicaciones los usuarios registrados y loggeados.
 app.use("/productos/agregar",routerUsuarioSession);
 app.use("/publicaciones",routerUsuarioSession);
-//routerUsuarioAutor
-var routerUsuarioAutor = express.Router();
-routerUsuarioAutor.use(function(req, res, next) {
+//routerUsuarioPropietario
+var routerUsuarioPropietario = express.Router();
+routerUsuarioPropietario.use(function(req, res, next) {
     var path = require('path');
     var id = path.basename(req.originalUrl);
     gestorBDProductos.obtenerProductos(
@@ -49,9 +49,12 @@ routerUsuarioAutor.use(function(req, res, next) {
         })
 });
 //Solo podrán modificar y eliminar productos sus propietarios
-app.use("/producto/modificar",routerUsuarioAutor);
-app.use("/producto/eliminar",routerUsuarioAutor);
+app.use("/producto/modificar",routerUsuarioPropietario);
+app.use("/producto/eliminar",routerUsuarioPropietario);
 app.use(express.static('public'));
+app.get('/', function (req, res) {
+    res.redirect('/tienda');
+});
 // Variables
 app.set('port', 8081);
 app.set('db', 'mongodb://admin:sdi123456789@sdi-actividad2-204-shard-00-00-pv4pc.mongodb.net:27017,sdi-actividad2-204-shard-00-01-pv4pc.mongodb.net:27017,sdi-actividad2-204-shard-00-02-pv4pc.mongodb.net:27017/test?ssl=true&replicaSet=sdi-actividad2-204-shard-0&authSource=admin&retryWrites=true');

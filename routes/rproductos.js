@@ -19,7 +19,7 @@ module.exports = function(app, swig, gestorBDProductos) {
                         if (err) {
                             res.send("Error al subir la imagen");
                         } else {
-                            res.send("Agregado id: " + id);
+                            res.redirect("/publicaciones");
                         }
                     });
                 }
@@ -107,24 +107,30 @@ module.exports = function(app, swig, gestorBDProductos) {
             } else {
                 modificarFoto(req.files, id, function (result) {
                     if( result == null){
-                        res.send("Error en la modificación");
+                        res.redirect("/publicaciones");
                     } else {
-                        res.send("Modificado");
+                        res.redirect("/publicaciones");
                     }
                 });
             }
         });
     });
     function modificarFoto(files, id, callback) {
-        if (files.portada != null) {
-            var imagen = files.portada;
-            imagen.mv('public/portadas/' + id + '.png', function (err) {
-                if (err) {
-                    callback(null); // ERROR
-                } else {
-                    callback(true);
-                }
-            });
+        if(files != null){
+            if (files.portada != null) {
+                var imagen = files.portada;
+                    imagen.mv('public/portadas/' + id + '.png', function (err) {
+                        if (err) {
+                            callback(null); // ERROR
+                        } else {
+                            callback(true);
+                        }
+                    });
+            }
+        }
+        else
+        {
+            callback(true);
         }
     }
     app.get('/producto/eliminar/:id', function (req, res) {

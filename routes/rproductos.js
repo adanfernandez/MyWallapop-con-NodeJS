@@ -62,7 +62,8 @@ module.exports = function(app, swig, gestorBDProductos, gestorBDUsuarios) {
             } else {
                 var respuesta = swig.renderFile('views/bproducto.html',
                     {
-                        producto : productos[0]
+                        producto : productos[0],
+                        usuario : req.session.usuario
                     });
                 res.send(respuesta);
             }
@@ -76,7 +77,8 @@ module.exports = function(app, swig, gestorBDProductos, gestorBDUsuarios) {
             } else {
                 var respuesta = swig.renderFile('views/bpublicaciones.html',
                     {
-                        productos : productos
+                        productos : productos,
+                        usuario : req.session.usuario
                     });
                 res.send(respuesta);
             }
@@ -203,7 +205,9 @@ module.exports = function(app, swig, gestorBDProductos, gestorBDUsuarios) {
             } else {
                 var respuesta = swig.renderFile('views/bcompras.html',
                     {
-                        productos : productos
+                        productos : productos,
+                        usuario : req.session.usuario
+
                     });
                 res.send(respuesta);
             }

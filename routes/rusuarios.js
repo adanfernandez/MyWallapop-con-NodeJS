@@ -64,6 +64,6 @@ module.exports = function(app, swig, gestorBDUsuarios) {
     });
     app.get('/desconectarse', function (req, res) {
         req.session.usuario = null;
-        res.send("Usuario desconectado");
+        res.redirect("/inicio");
     });
 };

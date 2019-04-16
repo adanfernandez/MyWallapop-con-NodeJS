@@ -29,25 +29,25 @@ module.exports = function(app, swig, gestorBDProductos, gestorBDUsuarios) {
     });
     app.get('/productos/agregar', function (req, res) {
         var respuesta = swig.renderFile('views/bagregar.html', {
+            usuario : req.session.usuario
         });
         res.send(respuesta);
     });
-
     app.get("/tienda", function(req, res) {
         var criterio  = {};
         if( req.query.busqueda != null ){
             criterio = {
                 "nombre" :  {$regex : ".*"+req.query.busqueda +".*", $options: 'i'},
-
             };
         }
         gestorBDProductos.obtenerProductos( criterio, function(productos) {
             if (productos == null) {
-                res.send("Error al listar productos");
+                res.redirect('/publicaciones');
             } else {
                 var respuesta = swig.renderFile('views/btienda.html',
                     {
-                        productos : productos
+                        productos : productos,
+                        usuario : req.session.usuario
                     });
                 res.send(respuesta);
             }
@@ -58,7 +58,7 @@ module.exports = function(app, swig, gestorBDProductos, gestorBDUsuarios) {
         var criterio = { "_id" : gestorBDProductos.mongo.ObjectID(req.params.id)  };
         gestorBDProductos.obtenerProductos(criterio,function(productos){
             if ( productos == null ){
-                res.send(respuesta);
+                res.redirect('/tienda');
             } else {
                 var respuesta = swig.renderFile('views/bproducto.html',
                     {
@@ -146,7 +146,6 @@ module.exports = function(app, swig, gestorBDProductos, gestorBDUsuarios) {
             }
         });
     });
-
     app.get('/producto/comprar/:id', function (req, res) {
         var productoId = gestorBDProductos.mongo.ObjectID(req.params.id);
         var criterio = {

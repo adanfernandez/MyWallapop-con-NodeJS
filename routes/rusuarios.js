@@ -1,5 +1,8 @@
 module.exports = function(app, swig, gestorBDUsuarios) {
-
+    app.get("/inicio", function(req, res) {
+        var respuesta = swig.renderFile('views/busuarioAnonimo.html', {});
+        res.send(respuesta);
+    });
     app.get("/registrarse", function(req, res) {
         var respuesta = swig.renderFile('views/bregistro.html', {});
         res.send(respuesta);
@@ -55,7 +58,7 @@ module.exports = function(app, swig, gestorBDUsuarios) {
                     "&tipoMensaje=alert-danger ");
             } else {
                 req.session.usuario = usuarios[0].email;
-                res.redirect("/publicaciones");
+                res.redirect("/tienda");
             }
         });
     });

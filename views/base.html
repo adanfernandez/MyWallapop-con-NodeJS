@@ -21,13 +21,16 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <img src="/public/img/logo.png" alt="logo"/>
+      <img src="img/logo.jpg" alt="logo"/>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
+        {% if usuario != null && usuario != 'admin@email.com'%}
         <li id="mTienda" class="active"><a href="/tienda">Tienda</a></li>
-		<li id="mPublicaciones"><a href="/publicaciones">Publicaciones</a></li>
-        <li id="mCompras"><a href="/compras">Compras</a></li>
+        <li id="mCompras"><a href="/compras">Mis compras</a></li>
+        <li id="agregar"><a href="/productos/agregar">Agregar producto</a></li>
+        <li id="mPublicaciones"><a href="/publicaciones">Mis publicaciones</a></li>
+        {% endif %}
       </ul>
       <ul class="nav navbar-nav navbar-right">
 	    <li><a href="/registrarse"><span class="glyphicon glyphicon-user"></span> Registrate</a></li>

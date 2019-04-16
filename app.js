@@ -20,21 +20,26 @@ var gestorBDUsuarios = require("./modules/gestorBDUsuarios.js");
 gestorBDProductos.init(app, mongo);
 gestorBDUsuarios.init(app, mongo);
 // routerUsuarioSession
-var routerUsuarioSession = express.Router();
-routerUsuarioSession.use(function(req, res, next) {
+var routerCompras = express.Router();
+routerCompras.use(function(req, res, next) {
     console.log("routerUsuarioSession");
     if ( req.session.usuario ) {
-        // dejamos correr la petición
-        next();
+        if( req.session.usuario != 'admin@email.com'){
+            next();
+        }
+        else {
+            res.redirect("/identificarse");
+        }
     } else {
-        res.redirect("/identificarse");
+        res.redirect("/inicio");
     }
 });
 //Sólo podrán agregar canciones y acceder a publicaciones los usuarios registrados y loggeados.
-app.use("/productos/agregar",routerUsuarioSession);
-app.use("/publicaciones",routerUsuarioSession);
-app.use("/producto/comprar",routerUsuarioSession);
-app.use("/compras",routerUsuarioSession);
+app.use("/productos/agregar",routerCompras);
+app.use("/publicaciones",routerCompras);
+app.use("/tienda",routerCompras);
+app.use("/producto/comprar",routerCompras);
+app.use("/compras",routerCompras);
 //routerUsuarioPropietario
 var routerUsuarioPropietario = express.Router();
 routerUsuarioPropietario.use(function(req, res, next) {
@@ -55,7 +60,21 @@ app.use("/producto/modificar",routerUsuarioPropietario);
 app.use("/producto/eliminar",routerUsuarioPropietario);
 app.use(express.static('public'));
 app.get('/', function (req, res) {
-    res.redirect('/tienda');
+    if(req.session.usuario)
+    {
+        if(req.session.usuario == 'admin@email.com')
+        {
+            res.redirect('/registrarse');
+        }
+        else
+        {
+            res.redirect('/tienda');
+        }
+    }
+    else
+    {
+        res.redirect('/inicio');
+    }
 });
 // Variables
 app.set('port', 8081);

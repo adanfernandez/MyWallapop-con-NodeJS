@@ -28,7 +28,7 @@ routerCompras.use(function(req, res, next) {
             next();
         }
         else {
-            res.redirect("/identificarse");
+            res.redirect("/admin");
         }
     } else {
         res.redirect("/inicio");
@@ -40,6 +40,20 @@ app.use("/publicaciones",routerCompras);
 app.use("/tienda",routerCompras);
 app.use("/producto/comprar",routerCompras);
 app.use("/compras",routerCompras);
+var routerAdmin = express.Router();
+routerAdmin.use(function(req, res, next) {
+    if ( req.session.usuario ) {
+        if (req.session.usuario == 'admin@email.com') {
+            next();
+        } else {
+            res.redirect('/tienda');
+        }
+    }
+    else {
+        res.redirect('/inicio')
+    }
+});
+app.use("/admin",routerAdmin);
 //routerUsuarioPropietario
 var routerUsuarioPropietario = express.Router();
 routerUsuarioPropietario.use(function(req, res, next) {
@@ -55,6 +69,20 @@ routerUsuarioPropietario.use(function(req, res, next) {
             }
         })
 });
+var routerAnonimo = express.Router();
+routerAnonimo.use(function(req, res, next) {
+    if ( req.session.usuario ) {
+        if (req.session.usuario == 'admin@email.com') {
+            res.redirect('/admin');
+        } else {
+            res.redirect('/tienda');
+        }
+    }
+    else {
+        next();
+    }
+});
+app.use("/inicio",routerAnonimo);
 //Solo podrán modificar y eliminar productos sus propietarios
 app.use("/producto/modificar",routerUsuarioPropietario);
 app.use("/producto/eliminar",routerUsuarioPropietario);

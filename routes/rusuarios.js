@@ -66,4 +66,10 @@ module.exports = function(app, swig, gestorBDUsuarios) {
         req.session.usuario = null;
         res.redirect("/inicio");
     });
+    app.get('/admin', function (req, res) {
+        var respuesta = swig.renderFile('views/blistarUsuarios.html', {
+            usuario : req.session.usuario
+        });
+        res.send(respuesta);
+    });
 };

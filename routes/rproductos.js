@@ -36,7 +36,10 @@ module.exports = function(app, swig, gestorBDProductos, gestorBDUsuarios) {
     app.get("/tienda", function(req, res) {
         var criterio  = {};
         if( req.query.busqueda != null ){
-            criterio = { "nombre" :  {$regex : ".*"+req.query.busqueda +".*", $options: 'i'} };
+            criterio = {
+                "nombre" :  {$regex : ".*"+req.query.busqueda +".*", $options: 'i'},
+
+            };
         }
         gestorBDProductos.obtenerProductos( criterio, function(productos) {
             if (productos == null) {
@@ -185,7 +188,7 @@ module.exports = function(app, swig, gestorBDProductos, gestorBDUsuarios) {
                                         }
                                     });
                                 } else {
-                                    res.redirect("/tienda?mensaje=El producto ya ha sido adquirido por otro usuario");
+                                    res.redirect("/tienda?mensaje=Ha ocurrido un error");
                                 }
                             }
                         }

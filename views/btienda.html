@@ -30,6 +30,11 @@
                 <div class="wrap">{{ producto.nombre }}</div>
                 <div class="text-left">{{ producto.precio }} €</div>
             </a>
+            <div>
+                {% if producto.comprador != null %}
+                <p class="bg-danger text-white" style="text-align: center; font-size:15px">Comprado</p>
+                {% endif %}
+            </div>
         </div>
     </div>
     {% endfor %}

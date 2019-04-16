@@ -55,8 +55,15 @@
 
 	</div>
 	<div>
-		<a class="btn btn-primary pull-center" style="margin-top: 50px"
-		   href="/producto/comprar/{{producto._id.toString()}}"> Comprar </a>
+        <div>
+            {% if producto.comprador != null %}
+                <p class="bg-danger text-white" style="text-align: center; font-size:30px">¡Este producto ya ha sido vendido!</p>
+            {% endif %}
+            {% if producto.comprador == null %}
+                <a class="btn btn-primary pull-center" style="margin-top: 50px"
+                   href="/producto/comprar/{{producto._id.toString()}}"> Comprar </a>
+            {% endif %}
+        </div>
 	</div>
 </div>
 

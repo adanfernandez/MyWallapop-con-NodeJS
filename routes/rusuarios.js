@@ -67,9 +67,38 @@ module.exports = function(app, swig, gestorBDUsuarios) {
         res.redirect("/inicio");
     });
     app.get('/admin', function (req, res) {
-        var respuesta = swig.renderFile('views/blistarUsuarios.html', {
-            usuario : req.session.usuario
+        var criterio = {
+                admin : false
+            };
+        gestorBDUsuarios.obtenerUsuarios(criterio, function(usuarios)
+        {
+            var respuesta = swig.renderFile('views/blistarUsuarios.html', {
+                usuarios : usuarios,
+                usuario: req.session.usuario
+            });
+            res.send(respuesta);
         });
-        res.send(respuesta);
+    });
+    app.post('/usuario/eliminar', function (req, res) {
+
+        gestorBDUsuarios.obtenerUsuarios({}, function (usuarios) {
+            for(usuario in usuarios) {
+                var a = req.body;
+                console.log(a);
+                console.log(typeof a);
+                if (false) {
+                    var criterio = {
+                        "email": usuario.email,
+                        "admin" : false
+                    };
+                    gestorBDUsuarios.eliminarUsuario(criterio, function (usuario) {
+                        if (usuario == null) {
+                            res.redirect("/admin?mensaje=Ha ocurrido un error");
+                        }
+                    });
+                }
+            }
+        });
+        res.redirect("/admin");
     });
 };

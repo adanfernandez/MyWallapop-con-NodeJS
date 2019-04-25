@@ -27,7 +27,10 @@
 
             <div >
                 <div>
-                    <a href="/producto/{{ producto._id.toString() }}"> <img src="/portadas/{{ producto._id.toString() }}.png" alt="logo" width="80" height="80"/></a>
+                    <a href="/producto/{{ producto._id.toString() }}">
+                        <img src="/portadas/{{ producto._id.toString() }}.png" alt="logo" width="80" height="80"
+                             onerror="this.src='http://www.fecsoria.es/Imagenes_web/imagen-no-disponible.jpg';"/>
+                    </a>
                         <div class="input-group col-xs-8 col-sm-6 col-md-4 col-lg-5 pull-right" style="margin-bottom: 14%">
                             {% if producto.comprador != null %}
                             <p class="bg-danger text-white" style="text-align: center; font-size:15px">Vendido</p>
@@ -36,8 +39,9 @@
                             <span>Producto propio</span>
                             {% endif %}
                             {% if producto.comprador == null && producto.propietario != usuario %}
-                            <a class="btn btn-primary pull-center" style="margin-top: 50px"
-                               href="/producto/comprar/{{producto._id.toString()}}">Comprar</a class="btn btn-primary pull-center">
+                            <a class="btn btn-primary pull-center"
+                               href="/producto/comprar/{{producto._id.toString()}}"
+                               class="btn btn-primary pull-center">Comprar</a>
                             {% endif %}
                         </div>
                         <!-- http://www.socicon.com/generator.php -->

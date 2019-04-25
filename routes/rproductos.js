@@ -16,16 +16,17 @@ module.exports = function(app, swig, gestorBDProductos, gestorBDUsuarios) {
                     "&tipoMensaje=alert-danger ");
             }
             else {
-                if (req.files.imagen != null) {
-                    var imagen = req.files.imagen;
-                    imagen.mv('public/portadas/' + id + '.png', function(err) {
-                        if (err) {
-                            res.send("Error al subir la imagen");
-                        } else {
-                            res.redirect("/publicaciones");
-                        }
-                    });
+                if(req.files != null) {
+                    if (req.files.imagen != null) {
+                        var  imagen = req.files.imagen;
+                        imagen.mv('public/portadas/' + id + '.png', function(err) {
+                            if (err) {
+                                res.redirect("/tienda?mensaje=Se ha producido un error.");
+                            }
+                        });
+                    }
                 }
+                res.redirect("/publicaciones");
             }
         });
     });
@@ -57,7 +58,6 @@ module.exports = function(app, swig, gestorBDProductos, gestorBDUsuarios) {
             }
         });
     });
-
     app.get('/producto/:id', function (req, res) {
         var criterio = { "_id" : gestorBDProductos.mongo.ObjectID(req.params.id)  };
         gestorBDProductos.obtenerProductos(criterio,function(productos){
@@ -113,7 +113,7 @@ module.exports = function(app, swig, gestorBDProductos, gestorBDUsuarios) {
             nombre : req.body.nombre,
             descripcion : req.body.descripcion,
             precio : req.body.precio
-        }
+        };
         gestorBDProductos.modificarProducto(criterio, producto, function(result) {
             if (result == null) {
                 res.send("Error al modificar ");

@@ -29,7 +29,8 @@ module.exports = function(app, swig, gestorBDProductos, gestorBDUsuarios) {
     });
     app.get('/productos/agregar', function (req, res) {
         var respuesta = swig.renderFile('views/bagregar.html', {
-            usuario : req.session.usuario
+            usuario : req.session.usuario,
+            dinero : req.session.dinero
         });
         res.send(respuesta);
     });
@@ -47,7 +48,8 @@ module.exports = function(app, swig, gestorBDProductos, gestorBDUsuarios) {
                 var respuesta = swig.renderFile('views/btienda.html',
                     {
                         productos : productos,
-                        usuario : req.session.usuario
+                        usuario : req.session.usuario,
+                        dinero : req.session.dinero
                     });
                 res.send(respuesta);
             }
@@ -63,7 +65,8 @@ module.exports = function(app, swig, gestorBDProductos, gestorBDUsuarios) {
                 var respuesta = swig.renderFile('views/bproducto.html',
                     {
                         producto : productos[0],
-                        usuario : req.session.usuario
+                        usuario : req.session.usuario,
+                        dinero : req.session.dinero
                     });
                 res.send(respuesta);
             }
@@ -78,7 +81,8 @@ module.exports = function(app, swig, gestorBDProductos, gestorBDUsuarios) {
                 var respuesta = swig.renderFile('views/bpublicaciones.html',
                     {
                         productos : productos,
-                        usuario : req.session.usuario
+                        usuario : req.session.usuario,
+                        dinero : req.session.dinero
                     });
                 res.send(respuesta);
             }
@@ -93,7 +97,8 @@ module.exports = function(app, swig, gestorBDProductos, gestorBDUsuarios) {
                 var respuesta = swig.renderFile('views/bproductoModificar.html',
                     {
                         producto : productos[0],
-                        usuario : req.session.usuario
+                        usuario : req.session.usuario,
+                        dinero : req.session.dinero
                     });
                 res.send(respuesta);
             }
@@ -177,9 +182,10 @@ module.exports = function(app, swig, gestorBDProductos, gestorBDUsuarios) {
                                         if (idCompra == null) {
                                             res.redirect("/tienda?mensaje=Ha ocurrido un error");
                                         } else {
-                                            actualizacion_usuario = {
+                                            var actualizacion_usuario = {
                                                 dinero : usuarios[0].dinero - productos[0].precio
                                             };
+                                            req.session.dinero = usuarios[0].dinero - productos[0].precio;
                                             gestorBDUsuarios.modificarUsuarios(criterio_usuario, actualizacion_usuario, function (users) {
                                                     if(users == null)
                                                         res.redirect("/tienda?mensaje=Ha ocurrido un error");
@@ -207,13 +213,11 @@ module.exports = function(app, swig, gestorBDProductos, gestorBDUsuarios) {
                 var respuesta = swig.renderFile('views/bcompras.html',
                     {
                         productos : productos,
-                        usuario : req.session.usuario
-
+                        usuario : req.session.usuario,
+                        dinero : req.session.dinero
                     });
                 res.send(respuesta);
             }
         });
     });
-
-
 };

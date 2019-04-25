@@ -47,6 +47,19 @@
 
 
 <div class="container">
+
+  {% if usuario != null && dinero != ' ' %}
+  <p style="text-align: center">
+    <span ><small>Usuario: </small></span>
+    <span><small>{{usuario}}</small> <span></span></span>
+  </p>
+
+  <p style="text-align: center">
+    <span ><small>Dinero disponible: </small></span>
+          <span><small>{{dinero}}</small> <span><small>€</small></span></span>
+  </p>
+  {% endif %}
+
     <script>
           var mensaje = getUrlParameter('mensaje');
           var tipoMensaje = getUrlParameter('tipoMensaje');

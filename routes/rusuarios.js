@@ -60,6 +60,7 @@ module.exports = function(app, swig, gestorBDUsuarios) {
                     "&tipoMensaje=alert-danger ");
             } else {
                 req.session.usuario = usuarios[0].email;
+                req.session.dinero = usuarios[0].dinero,
                 res.redirect("/tienda");
             }
         });
@@ -86,7 +87,6 @@ module.exports = function(app, swig, gestorBDUsuarios) {
         var list = req.body.checkbox;
         if(typeof list !== 'undefined') {
             var arr = Array(list);
-            //console.log(arr[0][0]);
             if(arr[0][0].length == 1)
             {
                 //Si hay solo un usuario seleccionado
@@ -111,7 +111,6 @@ module.exports = function(app, swig, gestorBDUsuarios) {
                     });
                 }
             }
-
         }
         res.redirect("/admin");
     });

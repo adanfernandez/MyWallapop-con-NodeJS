@@ -13,7 +13,9 @@ module.exports = function(app, swig, gestorBDProductos, gestorBDUsuarios) {
             if (id == null) {
                 res.redirect("/productos/agregar" +
                     "?mensaje=Error al insertar el producto"+
-                    "&tipoMensaje=alert-danger ");            } else {
+                    "&tipoMensaje=alert-danger ");
+            }
+            else {
                 if (req.files.imagen != null) {
                     var imagen = req.files.imagen;
                     imagen.mv('public/portadas/' + id + '.png', function(err) {

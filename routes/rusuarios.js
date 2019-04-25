@@ -114,7 +114,7 @@ module.exports = function(app, swig, gestorBDUsuarios, gestorBDProductos) {
             else
             {
                 //Si hay más de un usuario seleccionado
-                for(indice in arr[0]) {
+                for(let indice in arr[0]) {
                     var criterio = {
                         email: arr[0][indice]
                     };

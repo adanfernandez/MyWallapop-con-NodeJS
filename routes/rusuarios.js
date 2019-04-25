@@ -20,6 +20,8 @@ module.exports = function(app, swig, gestorBDUsuarios) {
             .update(req.body.password).digest('hex');
         var usuario = {
             email : req.body.email,
+            nombre : req.body.nombre,
+            apellidos : req.body.apellidos,
             password : seguro,
             admin : false,
             dinero : parseFloat("100")
@@ -82,18 +84,34 @@ module.exports = function(app, swig, gestorBDUsuarios) {
 
     app.post('/usuario/eliminar', function (req, res) {
         var list = req.body.checkbox;
-        console.log("USUARIOS: " + list);
         if(typeof list !== 'undefined') {
             var arr = Array(list);
-            for(indice in arr[0]) {
+            //console.log(arr[0][0]);
+            if(arr[0][0].length == 1)
+            {
+                //Si hay solo un usuario seleccionado
                 var criterio = {
-                    email: arr[0][indice]
-                }
+                    email: arr[0]
+                };
                 gestorBDUsuarios.eliminarUsuario(criterio, function(usuarios){
                     if(usuarios == null)
                         res.redirect("/admin?mensaje=Se ha producido un error");
                 });
             }
+            else
+            {
+                //Si hay más de un usuario seleccionado
+                for(indice in arr[0]) {
+                    var criterio = {
+                        email: arr[0][indice]
+                    };
+                    gestorBDUsuarios.eliminarUsuario(criterio, function(usuarios){
+                        if(usuarios == null)
+                            res.redirect("/admin?mensaje=Se ha producido un error");
+                    });
+                }
+            }
+
         }
         res.redirect("/admin");
     });

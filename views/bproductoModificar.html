@@ -1,7 +1,5 @@
-{% extends "base.html" %} 
-
+{% extends "base.html" %}
 {% block titulo %} Modificar producto {% endblock %}
-
 {% block contenido_principal %}
   <h2>Modificar producto</h2>
   <form class="form-horizontal" method="post" action="/producto/modificar/{{ producto._id.toString() }}" encType="multipart/form-data">

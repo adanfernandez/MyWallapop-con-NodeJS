@@ -59,7 +59,12 @@
             {% if producto.comprador != null %}
                 <p class="bg-danger text-white" style="text-align: center; font-size:30px">¡Este producto ya ha sido vendido!</p>
             {% endif %}
-            {% if producto.comprador == null %}
+
+			{% if producto.propietario == usuario %}
+				<p style="text-align: center; font-size:30px">Producto propio</p>
+			{% endif %}
+
+            {% if producto.comprador == null && producto.propietario != usuario%}
                 <a class="btn btn-primary pull-center" style="margin-top: 50px"
                    href="/producto/comprar/{{producto._id.toString()}}"> Comprar </a>
             {% endif %}

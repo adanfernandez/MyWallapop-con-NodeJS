@@ -88,11 +88,12 @@ module.exports = function(app, swig, gestorBDProductos, gestorBDUsuarios) {
         var criterio = { "_id" : gestorBDProductos.mongo.ObjectID(req.params.id) };
         gestorBDProductos.obtenerProductos(criterio,function(productos){
             if ( productos == null ){
-                res.send(respuesta);
+                res.redirect('/publicaciones');
             } else {
                 var respuesta = swig.renderFile('views/bproductoModificar.html',
                     {
-                        producto : productos[0]
+                        producto : productos[0],
+                        usuario : req.session.usuario
                     });
                 res.send(respuesta);
             }

@@ -59,7 +59,7 @@
   
 
   <h2>Productos</h2>
-  <div class="row">
+  <div class="container">
 	  <!-- http://librosweb.es/libro/bootstrap_3/capitulo_2/tipos_de_rejillas.html -->
 	  <!-- Inicio del Bloque canción  -->
 	  {% for producto in productos %}
@@ -70,7 +70,8 @@
 				<!-- http://www.socicon.com/generator.php  -->
 				  <div>{{ producto.nombre }} </div>
 				  <div class="small">{{ producto.autor }} </div>
-				  <div class="text-right">{{ producto.precio }} €</div>			 </a>
+				  <div class="text-right">{{ producto.precio }} €</div>
+			  </a>
 		  </div>
 	  </div>
 	  {%endfor%}

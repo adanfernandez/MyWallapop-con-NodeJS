@@ -1,4 +1,4 @@
-module.exports = function(app, swig, gestorBDUsuarios) {
+module.exports = function(app, swig, gestorBDUsuarios, gestorBDProductos) {
     app.get("/inicio", function(req, res) {
         var respuesta = swig.renderFile('views/busuarioAnonimo.html', {});
         res.send(respuesta);
@@ -96,7 +96,20 @@ module.exports = function(app, swig, gestorBDUsuarios) {
                 gestorBDUsuarios.eliminarUsuario(criterio, function(usuarios){
                     if(usuarios == null)
                         res.redirect("/admin?mensaje=Se ha producido un error");
+                    else
+                    {
+                        var criterio_Producto = {
+                            propietario : arr[0]
+                        };
+                        gestorBDProductos.eliminarProducto(criterio_Producto, function(productos){
+                            if(productos == null)
+                            {
+                                res.redirect("/admin?mensaje=Se ha producido un error");
+                            }
+                        });
+                    }
                 });
+
             }
             else
             {
@@ -108,6 +121,18 @@ module.exports = function(app, swig, gestorBDUsuarios) {
                     gestorBDUsuarios.eliminarUsuario(criterio, function(usuarios){
                         if(usuarios == null)
                             res.redirect("/admin?mensaje=Se ha producido un error");
+                        else
+                        {
+                            var criterio_Producto = {
+                                propietario : arr[0][indice]
+                            };
+                            gestorBDProductos.eliminarProducto(criterio_Producto, function(productos){
+                                if(productos == null)
+                                {
+                                    res.redirect("/admin?mensaje=Se ha producido un error");
+                                }
+                            });
+                        }
                     });
                 }
             }

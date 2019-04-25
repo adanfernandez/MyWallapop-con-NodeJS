@@ -110,7 +110,7 @@ app.set('db', 'mongodb://admin:sdi123456789@sdi-actividad2-204-shard-00-00-pv4pc
 app.set('clave','sdi123456789');
 app.set('crypto', crypto);
 //Rutas/controladores por lógica
-require("./routes/rusuarios.js")(app, swig, gestorBDUsuarios);
+require("./routes/rusuarios.js")(app, swig, gestorBDUsuarios, gestorBDProductos);
 require("./routes/rproductos.js")(app, swig, gestorBDProductos, gestorBDUsuarios);
 // lanzar el servidor
 app.listen(app.get('port'), function() {

@@ -79,26 +79,22 @@ module.exports = function(app, swig, gestorBDUsuarios) {
             res.send(respuesta);
         });
     });
-    app.post('/usuario/eliminar', function (req, res) {
 
-        gestorBDUsuarios.obtenerUsuarios({}, function (usuarios) {
-            for(usuario in usuarios) {
-                var a = req.body;
-                console.log(a);
-                console.log(typeof a);
-                if (false) {
-                    var criterio = {
-                        "email": usuario.email,
-                        "admin" : false
-                    };
-                    gestorBDUsuarios.eliminarUsuario(criterio, function (usuario) {
-                        if (usuario == null) {
-                            res.redirect("/admin?mensaje=Ha ocurrido un error");
-                        }
-                    });
+    app.post('/usuario/eliminar', function (req, res) {
+        var list = req.body.checkbox;
+        console.log("USUARIOS: " + list);
+        if(typeof list !== 'undefined') {
+            var arr = Array(list);
+            for(indice in arr[0]) {
+                var criterio = {
+                    email: arr[0][indice]
                 }
+                gestorBDUsuarios.eliminarUsuario(criterio, function(usuarios){
+                    if(usuarios == null)
+                        res.redirect("/admin?mensaje=Se ha producido un error");
+                });
             }
-        });
+        }
         res.redirect("/admin");
     });
 };

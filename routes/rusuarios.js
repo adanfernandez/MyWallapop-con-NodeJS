@@ -89,7 +89,6 @@ module.exports = function(app, swig, gestorBDUsuarios, gestorBDProductos) {
         var criterio_producto = {};
         if(typeof usuarios !== 'undefined'){
             //Si solo hay un usuario
-            console.log("TIPO: " + typeof usuarios);
             if(typeof usuarios === "string")  {
                 criterio_usuario = {
                     email : usuarios

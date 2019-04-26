@@ -72,5 +72,25 @@ module.exports = {
                 });
             }
         });
-    }
+    },
+    obtenerProductosPg : function(criterio,pg,funcionCallback){
+        this.mongo.MongoClient.connect(this.app.get('db'), function(err, db) {
+            if (err) {
+                funcionCallback(null);
+            } else {
+                var collection = db.collection('productos');
+                collection.count(function(err, count){
+                    collection.find(criterio).skip( (pg-1)*5 ).limit( 5 )
+                        .toArray(function(err, productos) {
+                            if (err) {
+                                funcionCallback(null);
+                            } else {
+                                funcionCallback(productos, count);
+                            }
+                            db.close();
+                        });
+                });
+            }
+        });
+    },
 };

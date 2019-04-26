@@ -44,7 +44,41 @@ module.exports = function(app, swig, gestorBDProductos, gestorBDUsuarios) {
                 "nombre" :  {$regex : ".*"+req.query.busqueda +".*", $options: 'i'},
             };
         }
-        gestorBDProductos.obtenerProductos( criterio, function(productos) {
+
+        var pg = parseInt(req.query.pg); // Es String !!!
+        if ( req.query.pg == null){ // Puede no venir el param
+            pg = 1;
+        }
+
+        gestorBDProductos.obtenerProductosPg(criterio, pg , function(productos, total ) {
+            if (productos == null) {
+                res.send("Error al listar ");
+            } else {
+                var ultimaPg = total/4;
+                if (total % 4 > 0 ){ // Sobran decimales
+                    ultimaPg = ultimaPg+1;
+                }
+                var paginas = []; // paginas mostrar
+                for(var i = pg-2 ; i <= pg+2 ; i++){
+                    if ( i > 0 && i <= ultimaPg){
+                        paginas.push(i);
+                    }
+                }
+                var respuesta = swig.renderFile('views/btienda.html',
+                    {
+                        productos : productos,
+                        usuario : req.session.usuario,
+                        dinero : req.session.dinero,
+                        paginas: paginas,
+                        actual : pg
+                    });
+                res.send(respuesta);
+            }
+        });
+
+
+
+        /*gestorBDProductos.obtenerProductos( criterio, function(productos) {
             if (productos == null) {
                 res.redirect('/publicaciones');
             } else {
@@ -55,9 +89,8 @@ module.exports = function(app, swig, gestorBDProductos, gestorBDUsuarios) {
                         dinero : req.session.dinero
                     });
                 res.send(respuesta);
-            }
+            }*/
         });
-    });
     app.get('/producto/:id', function (req, res) {
         var criterio = { "_id" : gestorBDProductos.mongo.ObjectID(req.params.id)  };
         gestorBDProductos.obtenerProductos(criterio,function(productos){

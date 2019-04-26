@@ -84,58 +84,42 @@ module.exports = function(app, swig, gestorBDUsuarios, gestorBDProductos) {
     });
 
     app.post('/usuario/eliminar', function (req, res) {
-        var list = req.body.checkbox;
-        if(typeof list !== 'undefined') {
-            var arr = Array(list);
-            if(arr[0][0].length == 1)
-            {
-                //Si hay solo un usuario seleccionado
-                var criterio = {
-                    email: arr[0]
+        var usuarios = req.body.usuarios;
+        var criterio_usuario = {};
+        var criterio_producto = {};
+        if(typeof usuarios !== 'undefined'){
+            //Si solo hay un usuario
+            console.log("TIPO: " + typeof usuarios);
+            if(typeof usuarios === "string")  {
+                criterio_usuario = {
+                    email : usuarios
                 };
-                gestorBDUsuarios.eliminarUsuario(criterio, function(usuarios){
-                    if(usuarios == null)
-                        res.redirect("/admin?mensaje=Se ha producido un error");
-                    else
-                    {
-                        var criterio_Producto = {
-                            propietario : arr[0]
-                        };
-                        gestorBDProductos.eliminarProducto(criterio_Producto, function(productos){
-                            if(productos == null)
-                            {
-                                res.redirect("/admin?mensaje=Se ha producido un error");
-                            }
-                        });
-                    }
-                });
-
+                criterio_producto = {
+                    propietario : usuarios
+                };
             }
-            else
+            //Si hay más de un usuario seleccionado
+            else if(typeof 'object')  {
+                criterio_usuario = {
+                    email : {$in : usuarios}
+                };
+                criterio_producto = {
+                    propietario : {$in : usuarios}
+                };
+            }
+            gestorBDUsuarios.eliminarUsuario(criterio_usuario, function (usuarios) {
+               if(usuarios == null)
+               {
+                   res.redirect('/admin?mensaje=Se ha producido un error');
+               }
+            });
+            gestorBDProductos.eliminarProducto(criterio_producto, function(productos)
             {
-                //Si hay más de un usuario seleccionado
-                for(let indice in arr[0]) {
-                    var criterio = {
-                        email: arr[0][indice]
-                    };
-                    gestorBDUsuarios.eliminarUsuario(criterio, function(usuarios){
-                        if(usuarios == null)
-                            res.redirect("/admin?mensaje=Se ha producido un error");
-                        else
-                        {
-                            var criterio_Producto = {
-                                propietario : arr[0][indice]
-                            };
-                            gestorBDProductos.eliminarProducto(criterio_Producto, function(productos){
-                                if(productos == null)
-                                {
-                                    res.redirect("/admin?mensaje=Se ha producido un error");
-                                }
-                            });
-                        }
-                    });
-                }
-            }
+               if(productos == null)
+               {
+                   res.redirect('/admin?mensaje=Se ha producido un error');
+               }
+            });
         }
         res.redirect("/admin");
     });

@@ -17,9 +17,9 @@
                 {% for usuario in usuarios %}
                 <tr>
                     <td>{{usuario.email}}</td>
-                    <td>{{usuario.email}}</td>
-                    <td>{{usuario.email}}</td>
-                    <td><input type="checkbox" name="checkbox" value="{{usuario.email}}"></td>
+                    <td>{{usuario.nombre}}</td>
+                    <td>{{usuario.apellidos}}</td>
+                    <td><input type="checkbox" name="usuarios" value="{{usuario.email}}"></td>
                 </tr>
                 {% endfor %}
             </tbody>

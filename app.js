@@ -1,6 +1,8 @@
 // Módulos
 var express = require('express');
 var app = express();
+var jwt = require('jsonwebtoken');
+app.set('jwt',jwt);
 var expressSession = require('express-session');
 app.use(expressSession({
     secret: 'sdi123456789',
@@ -112,6 +114,8 @@ app.set('crypto', crypto);
 //Rutas/controladores por lógica
 require("./routes/rusuarios.js")(app, swig, gestorBDUsuarios, gestorBDProductos);
 require("./routes/rproductos.js")(app, swig, gestorBDProductos, gestorBDUsuarios);
+require("./routes/rapiproductos.js")(app, gestorBDProductos);
+require("./routes/raplicaciones.js")(app, gestorBDUsuarios);
 // lanzar el servidor
 app.listen(app.get('port'), function() {
     console.log("Servidor activo");

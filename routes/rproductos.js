@@ -75,22 +75,7 @@ module.exports = function(app, swig, gestorBDProductos, gestorBDUsuarios) {
                 res.send(respuesta);
             }
         });
-
-
-
-        /*gestorBDProductos.obtenerProductos( criterio, function(productos) {
-            if (productos == null) {
-                res.redirect('/publicaciones');
-            } else {
-                var respuesta = swig.renderFile('views/btienda.html',
-                    {
-                        productos : productos,
-                        usuario : req.session.usuario,
-                        dinero : req.session.dinero
-                    });
-                res.send(respuesta);
-            }*/
-        });
+    });
     app.get('/producto/:id', function (req, res) {
         var criterio = { "_id" : gestorBDProductos.mongo.ObjectID(req.params.id)  };
         gestorBDProductos.obtenerProductos(criterio,function(productos){

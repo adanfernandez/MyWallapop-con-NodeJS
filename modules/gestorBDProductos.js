@@ -6,6 +6,7 @@ module.exports = {
         this.app = app;
     },
     obtenerProductos : function(criterio, funcionCallback){
+        console.log(criterio);
         this.mongo.MongoClient.connect(this.app.get('db'), function(err, db) {
             if (err) {
                 funcionCallback(null);

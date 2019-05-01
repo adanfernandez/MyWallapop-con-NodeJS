@@ -58,8 +58,13 @@ module.exports = function(app, gestorBDUsuarios, gestorBDProductos, gestorBDMens
 
                 if (usuario === propietario)
                 {
+                    var receptor = propietario;
+                    if(typeof req.body.recep !== 'undefined')
+                    {
+                        receptor = req.body.recep;
+                    }
                     criterio_conversacion = {
-                        "usuario1" : req.body.recep,
+                        "usuario1" : receptor,
                         "usuario2": propietario,
                         "producto" : id_producto
                     };

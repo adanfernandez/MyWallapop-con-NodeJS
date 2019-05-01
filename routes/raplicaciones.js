@@ -56,7 +56,14 @@ module.exports = function(app, gestorBDUsuarios, gestorBDProductos, gestorBDMens
                     "producto" : id_producto
                 };
 
-
+                if (usuario === propietario)
+                {
+                    criterio_conversacion = {
+                        "usuario1" : req.body.recep,
+                        "usuario2": propietario,
+                        "producto" : id_producto
+                    };
+                }
                 gestorBDMensajes.obtenerConversacion(criterio_conversacion, function (conversaciones) {
                     if(conversaciones.length > 0)
                     {

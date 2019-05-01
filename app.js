@@ -19,8 +19,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 var gestorBDProductos = require("./modules/gestorBDProductos.js");
 var gestorBDUsuarios = require("./modules/gestorBDUsuarios.js");
+var gestorBDMensajes = require("./modules/gestorBDMensajes.js");
 gestorBDProductos.init(app, mongo);
 gestorBDUsuarios.init(app, mongo);
+gestorBDMensajes.init(app, mongo);
 // routerUsuarioSession
 var routerCompras = express.Router();
 routerCompras.use(function(req, res, next) {
@@ -119,6 +121,7 @@ routerUsuarioToken.use(function(req, res, next) {
 });
 // Aplicar routerUsuarioToken
 app.use('/api/productosdisponibles', routerUsuarioToken);
+app.use('/api/mensajes', routerUsuarioToken);
 app.use("/inicio",routerAnonimo);
 //Solo podrán modificar y eliminar productos sus propietarios
 app.use("/producto/modificar",routerUsuarioPropietario);
@@ -150,7 +153,7 @@ app.set('crypto', crypto);
 require("./routes/rusuarios.js")(app, swig, gestorBDUsuarios, gestorBDProductos);
 require("./routes/rproductos.js")(app, swig, gestorBDProductos, gestorBDUsuarios);
 require("./routes/rapiproductos.js")(app, gestorBDProductos);
-require("./routes/raplicaciones.js")(app, gestorBDUsuarios);
+require("./routes/raplicaciones.js")(app, gestorBDUsuarios, gestorBDProductos, gestorBDMensajes);
 // lanzar el servidor
 app.listen(app.get('port'), function() {
     console.log("Servidor activo");

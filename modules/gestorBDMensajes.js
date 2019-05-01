@@ -50,7 +50,6 @@ module.exports = {
                     if (err) {
                         funcionCallback(null);
                     } else {
-                        console.log("CONVERSACIONES ---->    " + conversaciones);
                         funcionCallback(conversaciones);
                     }
                     db.close();

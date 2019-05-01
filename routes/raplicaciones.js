@@ -138,9 +138,9 @@ module.exports = function(app, gestorBDUsuarios, gestorBDProductos, gestorBDMens
     );
 
 
-    app.get("/api/leermensajes", function(req, res) {
+    app.get("/api/leermensajes/:producto", function(req, res) {
         var usuario = res.usuario;
-        var producto = req.headers['producto'];
+        var producto = req.params.producto;
         console.log("PRODUCTO ------->    " + producto);
 
 
@@ -179,26 +179,35 @@ module.exports = function(app, gestorBDUsuarios, gestorBDProductos, gestorBDMens
                             })
                         }
                         else {
+                            var ids = [];
+                            var i = 0;
+                            while ( i < conversaciones.length) {
+                                console.log("CONVERSACION ------->   " + conversaciones[i]._id);
+                                ids.push(conversaciones[i]._id);
+                                i++;
+                            }
+                            console.log("IDS: ------------>    " + ids);
                             var criterio_mensajes = {
-                                conversacion : conversaciones[0]._id
+                                conversacion: {
+                                    $in: ids
+                                }
                             };
+                            console.log("CRITERIO MENSAJES ---------->     " + criterio_mensajes);
                             gestorBDMensajes.obtenerMensajes(criterio_mensajes, function (mensajes) {
-                                if(mensajes == null){
+                                if (mensajes == null) {
                                     res.status(501);
                                     res.json({
-                                        error : "se ha producido un error con los mensajes"
+                                        error: "se ha producido un error con los mensajes"
                                     })
-                                }
-                                else {
+                                } else {
                                     res.status(200);
-                                    res.send( JSON.stringify(mensajes) );
+                                    res.send(JSON.stringify(mensajes));
                                 }
                             });
                         }
-                        });
+                    });
                 }
             }
         });
     });
-
 }

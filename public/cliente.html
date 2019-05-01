@@ -1,6 +1,6 @@
 <html lang="en">
 <head>
-  <title>jQuery uoMusic </title>
+  <title>sdi-actividad2-204</title>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
@@ -22,7 +22,7 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav" id="barra-menu">
-        <li><a onclick=widgetCanciones()>Canciones</a></li>
+        <li><a onclick=widgetOfertas()>Productos</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right" id="barra-menu-derecha">
 		<!-- Opciones de menú aqui -->
@@ -41,6 +41,10 @@
   var token;
   var URLbase = "http://localhost:8081/api";
   $( "#contenedor-principal" ).load( "widget-login.html");
+
+  function widgetOfertas() {
+    $("#contenedor-principal").load("widget-ofertas.html");
+  }
 </script>
 </body>
 </html>

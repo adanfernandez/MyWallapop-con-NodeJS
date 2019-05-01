@@ -1,0 +1,49 @@
+<div id="widget-canciones" >
+    <button class="btn" onclick="cargarCanciones()" >Actualizar</button>
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Genero</th>
+            <th>Precio</th>
+            <th>Propietario</th>
+            <th class="col-md-1"></th>
+        </tr>
+        </thead>
+        <tbody id="tablaCuerpo">
+
+        </tbody>
+    </table>
+</div>
+<script>
+    var productos;
+    function cargarProductos(){
+        $.ajax({
+            url: URLbase + "/productosdisponibles",
+            type: "GET",
+            data: { },
+            dataType: 'json',
+            headers: { "token": token },
+            success: function(respuesta) {
+                productos = respuesta;
+                actualizarTabla(productos);
+            },
+            error : function (error){
+                $( "#contenedor-principal" ).load("widget-login.html");
+            }
+        });
+    }
+    function actualizarTabla(productosMostrar){
+        $( "#tablaCuerpo" ).empty(); // Vaciar la tabla
+        for (i = 0; i < productosMostrar.length; i++) {
+            $( "#tablaCuerpo" ).append(
+                "<tr id="+productosMostrar[i]._id+">"+
+                "<td>"+productosMostrar[i].nombre+"</td>" +
+                "<td>"+productosMostrar[i].descripcion+"</td>" +
+                "<td>"+productosMostrar[i].precio+"</td>" +
+                "<td>"+productosMostrar[i].propietario+"</td>" +
+                "</tr>" );
+        }
+    }
+    cargarProductos();
+</script>

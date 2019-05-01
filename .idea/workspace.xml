@@ -2,8 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ee39ea3f-8d3c-4982-9ba7-7c87f1cd4268" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/widget-login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/raplicaciones.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/raplicaciones.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/agregar.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/cliente.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/bcancion.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/bcancionModificar.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/bcompras.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/bidentificacion.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/bpublicaciones.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/bregistro.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tienda.html" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -17,46 +26,19 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/routes/raplicaciones.js">
+        <entry file="file://$PROJECT_DIR$/public/cliente.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="60" column="46" selection-start-line="60" selection-start-column="46" selection-end-line="60" selection-end-column="46" />
+            <state relative-caret-position="241">
+              <caret line="41" column="44" lean-forward="true" selection-start-line="41" selection-start-column="44" selection-end-line="41" selection-end-column="44" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/rproductos.js">
+        <entry file="file://$PROJECT_DIR$/public/widget-login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="126" column="52" selection-start-line="126" selection-start-column="52" selection-end-line="126" selection-end-column="52" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/rusuarios.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="16" column="18" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/modules/gestorBDMensajes.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="18" column="42" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/modules/gestorBDProductos.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="30" column="60" selection-start-line="30" selection-start-column="60" selection-end-line="30" selection-end-column="60" />
+            <state relative-caret-position="310">
+              <caret line="25" column="24" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -67,6 +49,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -127,6 +110,9 @@
         <option value="$PROJECT_DIR$/modules/gestorBDProductos.js" />
         <option value="$PROJECT_DIR$/modules/gestorBDMensajes.js" />
         <option value="$PROJECT_DIR$/routes/raplicaciones.js" />
+        <option value="$PROJECT_DIR$/public/widget-login.js" />
+        <option value="$PROJECT_DIR$/public/widget-login.html" />
+        <option value="$PROJECT_DIR$/public/cliente.html" />
       </list>
     </option>
   </component>
@@ -156,6 +142,11 @@
             <path>
               <item name="sdi-actividad2-204" type="b2602c69:ProjectViewProjectNode" />
               <item name="sdi-actividad2-204" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sdi-actividad2-204" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sdi-actividad2-204" type="462c0819:PsiDirectoryNode" />
               <item name="routes" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -166,8 +157,14 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\adanv\Desktop\sdi_actividad2-204\sdi-actividad2-204\public" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -199,12 +196,12 @@
       <workItem from="1556281507686" duration="1330000" />
       <workItem from="1556360055864" duration="5019000" />
       <workItem from="1556392796501" duration="638000" />
-      <workItem from="1556642926190" duration="23491000" />
+      <workItem from="1556642926190" duration="24756000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65914000" />
+    <option name="totallyTimeSpent" value="67179000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -221,9 +218,9 @@
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="1" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="2" weight="0.1376488" />
+      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.1376488" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32991454" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -231,7 +228,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32991454" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32991454" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.3846154" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.051282052" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -240,9 +237,9 @@
     <layout-to-restore>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="1" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="2" weight="0.1376488" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.1376488" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.32991454" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -250,7 +247,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32991454" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32991454" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.3846154" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.3846154" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -292,9 +289,6 @@
     <entry file="file://$PROJECT_DIR$/public/img/estandar.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/tienda.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/bproducto.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -304,9 +298,6 @@
           </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/bcancionModificar.html">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/views/blistarUsuarios.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -384,6 +375,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/routes/raplicaciones.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="70" column="17" lean-forward="true" selection-start-line="70" selection-start-column="17" selection-end-line="70" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/routes/rproductos.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
@@ -412,10 +410,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/raplicaciones.js">
+    <entry file="file://$PROJECT_DIR$/public/widget-login.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="60" column="46" selection-start-line="60" selection-start-column="46" selection-end-line="60" selection-end-column="46" />
+        <state relative-caret-position="23">
+          <caret line="1" column="14" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/tienda.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/bidentificacion.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/bregistro.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/bpublicaciones.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/bcompras.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/bcancionModificar.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/widget-login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="25" column="24" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/cliente.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="41" column="44" lean-forward="true" selection-start-line="41" selection-start-column="44" selection-end-line="41" selection-end-column="44" />
         </state>
       </provider>
     </entry>

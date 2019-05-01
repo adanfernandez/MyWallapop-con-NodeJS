@@ -105,12 +105,12 @@ module.exports = function(app, gestorBDUsuarios, gestorBDProductos, gestorBDMens
                                 })
                             }
                             else  {
-                                console.log("Conversacion insertada");
-                                console.log("ID DE LA CONVERSACIÓN ----->      " + convers);
+                                var date = new Date();
                                 var criterio_mensaje = {
                                     "emisor" : usuario,
                                     "texto" : texto,
                                     "leido" : false,
+                                    "fecha" : date.getUTCDate() + '/' + (date.getUTCMonth() + 1) + '/' + date.getFullYear(),
                                     "conversacion" : convers
                                 };
                                 gestorBDMensajes.insertarMensaje(criterio_mensaje, function (mensajes) {
@@ -136,4 +136,69 @@ module.exports = function(app, gestorBDUsuarios, gestorBDProductos, gestorBDMens
             });
         }
     );
+
+
+    app.get("/api/leermensajes", function(req, res) {
+        var usuario = res.usuario;
+        var producto = req.headers['producto'];
+        console.log("PRODUCTO ------->    " + producto);
+
+
+        var criterio_producto = {
+            _id : gestorBDProductos.mongo.ObjectID(producto)
+        };
+        gestorBDProductos.obtenerProductos(criterio_producto, function(productos)
+        {
+            if(productos == null)
+            {
+                res.status(501);
+                res.json({
+                    error : "no se ha encontrado el producto"
+                })
+            }
+            else
+            {
+                if(productos)
+                {
+                    var criterio_conversacion = {
+                        producto : producto
+                    };
+                    console.log("PRODUCTOS -------------------->    " + productos[0].propietario);
+                    if(productos[0].propietario !== usuario) {
+                        criterio_conversacion = {
+                            producto : producto,
+                            usuario1 : usuario
+                        };
+                    }
+                    gestorBDMensajes.obtenerConversacion(criterio_conversacion, function(conversaciones)
+                    {
+                        if(conversaciones === null) {
+                            res.status(501);
+                            res.json({
+                                error : "se ha producido un error con las conversaciones"
+                            })
+                        }
+                        else {
+                            var criterio_mensajes = {
+                                conversacion : conversaciones[0]._id
+                            };
+                            gestorBDMensajes.obtenerMensajes(criterio_mensajes, function (mensajes) {
+                                if(mensajes == null){
+                                    res.status(501);
+                                    res.json({
+                                        error : "se ha producido un error con los mensajes"
+                                    })
+                                }
+                                else {
+                                    res.status(200);
+                                    res.send( JSON.stringify(mensajes) );
+                                }
+                            });
+                        }
+                        });
+                }
+            }
+        });
+    });
+
 }

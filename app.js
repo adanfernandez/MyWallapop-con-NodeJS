@@ -122,6 +122,7 @@ routerUsuarioToken.use(function(req, res, next) {
 // Aplicar routerUsuarioToken
 app.use('/api/productosdisponibles', routerUsuarioToken);
 app.use('/api/mensajes', routerUsuarioToken);
+app.use('/api/leermensajes', routerUsuarioToken);
 app.use("/inicio",routerAnonimo);
 //Solo podrán modificar y eliminar productos sus propietarios
 app.use("/producto/modificar",routerUsuarioPropietario);

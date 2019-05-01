@@ -179,17 +179,9 @@ module.exports = function(app, gestorBDUsuarios, gestorBDProductos, gestorBDMens
                             })
                         }
                         else {
-                            var ids = [];
-                            var i = 0;
-                            while ( i < conversaciones.length) {
-                                console.log("CONVERSACION ------->   " + conversaciones[i]._id);
-                                ids.push(conversaciones[i]._id);
-                                i++;
-                            }
-                            console.log("IDS: ------------>    " + ids);
                             var criterio_mensajes = {
                                 conversacion: {
-                                    $in: ids
+                                    $in: conversaciones.map(c => c._id)
                                 }
                             };
                             console.log("CRITERIO MENSAJES ---------->     " + criterio_mensajes);

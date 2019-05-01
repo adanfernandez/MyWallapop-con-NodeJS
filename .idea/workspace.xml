@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ee39ea3f-8d3c-4982-9ba7-7c87f1cd4268" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/modules/gestorBDMensajes.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gestorBDMensajes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/raplicaciones.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/raplicaciones.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -19,8 +18,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/raplicaciones.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="191" column="39" selection-start-line="191" selection-start-column="39" selection-end-line="191" selection-end-column="39" />
+            <state relative-caret-position="181">
+              <caret line="180" column="30" selection-start-line="180" selection-start-column="30" selection-end-line="180" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -216,12 +215,12 @@
       <workItem from="1556281507686" duration="1330000" />
       <workItem from="1556360055864" duration="5019000" />
       <workItem from="1556392796501" duration="638000" />
-      <workItem from="1556642926190" duration="34932000" />
+      <workItem from="1556642926190" duration="35407000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77355000" />
+    <option name="totallyTimeSpent" value="77830000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -248,7 +247,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32991454" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32991454" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.52820516" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.07008547" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -478,8 +477,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/raplicaciones.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="191" column="39" selection-start-line="191" selection-start-column="39" selection-end-line="191" selection-end-column="39" />
+        <state relative-caret-position="181">
+          <caret line="180" column="30" selection-start-line="180" selection-start-column="30" selection-end-line="180" selection-end-column="30" />
         </state>
       </provider>
     </entry>

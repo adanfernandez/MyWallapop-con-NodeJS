@@ -6,7 +6,6 @@
             <th>Genero</th>
             <th>Precio</th>
             <th>Propietario</th>
-            <th class="col-md-1"></th>
         </tr>
         </thead>
         <tbody id="tablaCuerpo">
@@ -41,8 +40,16 @@
                 "<td>"+productosMostrar[i].descripcion+"</td>" +
                 "<td>"+productosMostrar[i].precio+"</td>" +
                 "<td>"+productosMostrar[i].propietario+"</td>" +
+                "<td>" +
+                "<a onclick=mostrarChat('"+productosMostrar[i]._id+"')>Chat</a>"+
+                 "</td>" +
                 "</tr>" );
         }
     }
     cargarProductos();
+
+    function mostrarChat(product) {
+        productoSeleccionado = product;
+        $( "#contenedor-principal" ).load( "widget-chat.html" );
+    }
 </script>

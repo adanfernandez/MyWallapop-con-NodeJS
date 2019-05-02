@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ee39ea3f-8d3c-4982-9ba7-7c87f1cd4268" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/raplicaciones.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/raplicaciones.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -14,12 +15,21 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/raplicaciones.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="181">
-              <caret line="180" column="30" selection-start-line="180" selection-start-column="30" selection-end-line="180" selection-end-column="30" />
+            <state relative-caret-position="-206">
+              <caret line="105" column="25" lean-forward="true" selection-start-line="105" selection-start-column="25" selection-end-line="105" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/rproductos.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="678">
+              <caret line="43" column="70" selection-start-line="43" selection-start-column="70" selection-end-line="43" selection-end-column="70" />
             </state>
           </provider>
         </entry>
@@ -27,8 +37,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/rusuarios.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1709">
-              <caret line="16" column="18" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="18" />
+            <state relative-caret-position="195">
+              <caret line="105" column="36" selection-start-line="105" selection-start-column="35" selection-end-line="105" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -36,8 +46,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/rapiproductos.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+            <state relative-caret-position="115">
+              <caret line="5" column="29" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -45,17 +55,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-397">
-              <caret line="94" column="21" lean-forward="true" selection-start-line="94" selection-start-column="21" selection-end-line="94" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/modules/gestorBDMensajes.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
-              <caret line="51" column="28" selection-start-line="51" selection-start-column="28" selection-end-line="51" selection-end-column="28" />
+            <state relative-caret-position="333">
+              <caret line="59" column="17" selection-start-line="59" selection-start-column="10" selection-end-line="59" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -72,13 +73,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>gestorBDMensajes</find>
-      <find>gestorBDUsuarios</find>
-      <find>id</find>
-      <find>req</find>
-      <find>comprar</find>
-      <find>obtenerProductos</find>
-      <find>_id</find>
       <find>console.log</find>
       <find>objectId</find>
       <find>object</find>
@@ -102,6 +96,13 @@
       <find>convers</find>
       <find>api/mensajes</find>
       <find>query</find>
+      <find>publicaciones</find>
+      <find>admin</find>
+      <find>eliminar</find>
+      <find>/admin</find>
+      <find>$or</find>
+      <find>$a</find>
+      <find>$</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -146,6 +147,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -172,7 +174,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -215,12 +216,13 @@
       <workItem from="1556281507686" duration="1330000" />
       <workItem from="1556360055864" duration="5019000" />
       <workItem from="1556392796501" duration="638000" />
-      <workItem from="1556642926190" duration="35407000" />
+      <workItem from="1556642926190" duration="35507000" />
+      <workItem from="1556791474613" duration="7654000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77830000" />
+    <option name="totallyTimeSpent" value="85584000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -233,7 +235,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="1" side_tool="true" />
@@ -247,7 +248,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32991454" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32991454" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.07008547" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.48205128" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -266,7 +267,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32991454" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32991454" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.2888889" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.25982907" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -332,13 +333,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="14" column="35" lean-forward="true" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/public/base.html" />
     <entry file="file://$PROJECT_DIR$/views/bproductoModificar.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="303">
@@ -387,31 +382,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/widget-login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="14" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/tienda.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/bidentificacion.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/bregistro.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/bpublicaciones.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/bcompras.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/bcancionModificar.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/public/widget-login.js" />
+    <entry file="file://$PROJECT_DIR$/public/tienda.html" />
+    <entry file="file://$PROJECT_DIR$/public/bidentificacion.html" />
+    <entry file="file://$PROJECT_DIR$/public/bregistro.html" />
+    <entry file="file://$PROJECT_DIR$/public/bpublicaciones.html" />
+    <entry file="file://$PROJECT_DIR$/public/bcompras.html" />
+    <entry file="file://$PROJECT_DIR$/public/bcancionModificar.html" />
     <entry file="file://$PROJECT_DIR$/public/cliente.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -440,45 +417,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/rproductos.js">
+    <entry file="file://$PROJECT_DIR$/routes/rapiproductos.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="41" column="21" selection-start-line="41" selection-start-column="16" selection-end-line="41" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-397">
-          <caret line="94" column="21" lean-forward="true" selection-start-line="94" selection-start-column="21" selection-end-line="94" selection-end-column="21" />
+        <state relative-caret-position="115">
+          <caret line="5" column="29" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/rusuarios.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1709">
-          <caret line="16" column="18" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="18" />
+        <state relative-caret-position="195">
+          <caret line="105" column="36" selection-start-line="105" selection-start-column="35" selection-end-line="105" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/rproductos.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="678">
+          <caret line="43" column="70" selection-start-line="43" selection-start-column="70" selection-end-line="43" selection-end-column="70" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/modules/gestorBDMensajes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="51" column="28" selection-start-line="51" selection-start-column="28" selection-end-line="51" selection-end-column="28" />
+        <state relative-caret-position="248">
+          <caret line="52" column="24" selection-start-line="52" selection-start-column="24" selection-end-line="52" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/rapiproductos.js">
+    <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+        <state relative-caret-position="333">
+          <caret line="59" column="17" selection-start-line="59" selection-start-column="10" selection-end-line="59" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/raplicaciones.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="180" column="30" selection-start-line="180" selection-start-column="30" selection-end-line="180" selection-end-column="30" />
+        <state relative-caret-position="-206">
+          <caret line="105" column="25" lean-forward="true" selection-start-line="105" selection-start-column="25" selection-end-line="105" selection-end-column="25" />
         </state>
       </provider>
     </entry>

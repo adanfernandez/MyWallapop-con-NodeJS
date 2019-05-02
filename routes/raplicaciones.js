@@ -33,6 +33,7 @@ module.exports = function(app, gestorBDUsuarios, gestorBDProductos, gestorBDMens
 
     //Enviar mensajes
     app.post("/api/mensajes", function(req, res){
+            var date = new Date();
             var usuario = res.usuario;
             var producto = req.body.producto;
             var criterio_producto = {
@@ -56,83 +57,90 @@ module.exports = function(app, gestorBDUsuarios, gestorBDProductos, gestorBDMens
                     "producto" : id_producto
                 };
 
-                if (usuario === propietario)
+                if(usuario === propietario && typeof req.body.recep === 'undefined')
                 {
-                    var receptor = propietario;
-                    if(typeof req.body.recep !== 'undefined')
-                    {
-                        receptor = req.body.recep;
-                    }
-                    criterio_conversacion = {
-                        "usuario1" : receptor,
-                        "usuario2": propietario,
-                        "producto" : id_producto
-                    };
+                    res.status(500);
+                    res.json({
+                        error : "Error de formato. El usuario propietario de mensaje ha de indicar el destinatario."
+                    })
                 }
-                gestorBDMensajes.obtenerConversacion(criterio_conversacion, function (conversaciones) {
-                    if(conversaciones.length > 0)
-                    {
-                        var id_conversacion = conversaciones[0]._id;
-                        var criterio_mensaje = {
-                            "emisor" : usuario,
-                            "texto" : texto,
-                            "leido" : false,
-                            "conversacion" : id_conversacion
+                else {
+                    if (usuario === propietario && typeof req.body.recep !== 'undefined') {
+                        var receptor = req.body.recep;
+                        criterio_conversacion = {
+                            "usuario1" : receptor,
+                            "usuario2": propietario,
+                            "producto" : id_producto
                         };
-                        gestorBDMensajes.insertarMensaje(criterio_mensaje, function (mensajes) {
-                            if(mensajes == null)
-                            {
-                                res.status(500);
-                                res.json({
-                                    error : "se ha producido un error"
-                                })
-                            }
-                            else
-                            {
-                                res.status(201);
-                                res.json({
-                                    error : "Mensaje enviado"
-                                })
+                    }
+                    gestorBDMensajes.obtenerConversacion(criterio_conversacion, function (conversaciones) {
+                        if(conversaciones.length === 0 && usuario === propietario) {
+                            res.status(500);
+                            res.json({
+                                error : "se ha producido un error insertado el mensaje. El usuario propietario de un producto no puede iniciar el chat."
+                            })
+                        }
+                        else if(conversaciones.length > 0) {
+                            var id_conversacion = conversaciones[0]._id;
+                            var criterio_mensaje = {
+                                "emisor" : usuario,
+                                "texto" : texto,
+                                "leido" : false,
+                                "fecha" : date.getUTCDate() + '/' + (date.getUTCMonth() + 1) + '/' + date.getFullYear(),
+                                "conversacion" : id_conversacion
+                            };
+                            gestorBDMensajes.insertarMensaje(criterio_mensaje, function (mensajes) {
+                                if(mensajes == null) {
+                                    res.status(500);
+                                    res.json({
+                                        error : "se ha producido un error insertado el mensaje"
+                                    })
+                                }
+                                else  {
+                                    res.status(201);
+                                    res.json({
+                                        error : "Mensaje enviado"
+                                    })
+                                }
+                            });
+                        }
+                        else {
+                            gestorBDMensajes.insertarConversacion(criterio_conversacion, function (convers) {
+                                if(convers == null)  {
+                                    res.status(500); // Unauthorized
+                                    res.json({
+                                        error: "se ha producido un error insertando la conversación"
+                                    })
+                                }
+                                else  {
+                                    var criterio_mensaje = {
+                                        "emisor" : usuario,
+                                        "texto" : texto,
+                                        "leido" : false,
+                                        "fecha" : date.getUTCDate() + '/' + (date.getUTCMonth() + 1) + '/' + date.getFullYear(),
+                                        "conversacion" : convers
+                                    };
+                                    gestorBDMensajes.insertarMensaje(criterio_mensaje, function (mensajes) {
+                                        if(mensajes == null)
+                                        {
+                                            res.status(500);
+                                            res.json({
+                                                error : "se ha producido un error insertando el mensaje"
+                                            })
+                                        }
+                                        else
+                                        {
+                                            res.status(201);
+                                            res.json({
+                                                error : "Mensaje enviado"
+                                            })
+                                        }
+                                    });
+                                }
+                            });
                             }
                         });
                     }
-                    else {
-                        gestorBDMensajes.insertarConversacion(criterio_conversacion, function (convers) {
-                            if(convers == null)  {
-                                res.status(500); // Unauthorized
-                                res.json({
-                                    error: "se ha producido un error insertando la conversación"
-                                })
-                            }
-                            else  {
-                                var date = new Date();
-                                var criterio_mensaje = {
-                                    "emisor" : usuario,
-                                    "texto" : texto,
-                                    "leido" : false,
-                                    "fecha" : date.getUTCDate() + '/' + (date.getUTCMonth() + 1) + '/' + date.getFullYear(),
-                                    "conversacion" : convers
-                                };
-                                gestorBDMensajes.insertarMensaje(criterio_mensaje, function (mensajes) {
-                                    if(mensajes == null)
-                                    {
-                                        res.status(500);
-                                        res.json({
-                                            error : "se ha producido un error insertando el mensaje"
-                                        })
-                                    }
-                                    else
-                                    {
-                                        res.status(201);
-                                        res.json({
-                                            error : "Mensaje enviado"
-                                        })
-                                    }
-                                });
-                            }
-                        });
-                    }
-                });
             });
         }
     );
@@ -141,8 +149,6 @@ module.exports = function(app, gestorBDUsuarios, gestorBDProductos, gestorBDMens
     app.get("/api/leermensajes/:producto", function(req, res) {
         var usuario = res.usuario;
         var producto = req.params.producto;
-        console.log("PRODUCTO ------->    " + producto);
-
 
         var criterio_producto = {
             _id : gestorBDProductos.mongo.ObjectID(producto)
@@ -151,7 +157,7 @@ module.exports = function(app, gestorBDUsuarios, gestorBDProductos, gestorBDMens
         {
             if(productos == null)
             {
-                res.status(501);
+                res.status(500);
                 res.json({
                     error : "no se ha encontrado el producto"
                 })
@@ -163,7 +169,7 @@ module.exports = function(app, gestorBDUsuarios, gestorBDProductos, gestorBDMens
                     var criterio_conversacion = {
                         producto : producto
                     };
-                    console.log("PRODUCTOS -------------------->    " + productos[0].propietario);
+
                     if(productos[0].propietario !== usuario) {
                         criterio_conversacion = {
                             producto : producto,

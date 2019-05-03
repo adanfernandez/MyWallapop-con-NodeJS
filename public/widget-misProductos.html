@@ -5,7 +5,6 @@
             <th>Nombre</th>
             <th>Descripción</th>
             <th>Precio</th>
-            <th>Propietario</th>
         </tr>
         </thead>
         <tbody id="tablaCuerpo">
@@ -17,7 +16,7 @@
     var productos;
     function cargarProductos(){
         $.ajax({
-            url: URLbase + "/productosdisponibles",
+            url: URLbase + "/misproductos",
             type: "GET",
             data: { },
             dataType: 'json',
@@ -39,18 +38,17 @@
                 "<td>"+productosMostrar[i].nombre+"</td>" +
                 "<td>"+productosMostrar[i].descripcion+"</td>" +
                 "<td>"+productosMostrar[i].precio+"</td>" +
-                "<td>"+productosMostrar[i].propietario+"</td>" +
                 "<td>" +
-                "<a onclick=mostrarChat('"+productosMostrar[i]._id+"')>Chat</a>"+
-                 "</td>" +
+                "<a onclick=mostrarConversaciones('"+productosMostrar[i]._id+"')>Ver chats del producto</a>"+
+                "</td>" +
                 "</tr>" );
         }
     }
     cargarProductos();
 
-    function mostrarChat(product) {
+    function mostrarConversaciones(product) {
         productoSeleccionado = product;
-        converSeleccionada = null;
-        $( "#contenedor-principal" ).load( "widget-chat.html" );
+        alert(productoSeleccionado);
+        $( "#contenedor-principal" ).load( "widget-conversaciones.html" );
     }
 </script>

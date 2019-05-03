@@ -1,0 +1,55 @@
+<div id="widget-ofertas" >
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>USUARIO</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody id="tablaCuerpo">
+
+        </tbody>
+    </table>
+</div>
+
+<script>
+    function cargarConversaciones(){
+        $.ajax({
+            url: URLbase + "/leermensajes/" + productoSeleccionado,
+            type: "GET",
+            data: { },
+            dataType: 'json',
+            headers: { "token": token,
+            },
+            success: function(respuesta) {
+                conversaciones = respuesta;
+                actualizarTabla(conversaciones);
+            },
+            error : function (error){
+                $( "#contenedor-principal" ).load("widget-login.html");
+            }
+        });
+    }
+
+    cargarConversaciones();
+
+    function actualizarTabla(conversacionesMostrar){
+        $( "#tablaCuerpo" ).empty(); // Vaciar la tabla
+        for (i = 0; i < conversacionesMostrar.length; i++) {
+            $( "#tablaCuerpo" ).append(
+                "<tr id="+conversacionesMostrar[i]._id+">"+
+                "<td>"+conversacionesMostrar[i].usuario1+"</td>" +
+                "<td>" +
+                "<a onclick=mostrarChat('"+conversacionesMostrar[i]._id+"','" + conversacionesMostrar[i].usuario1 + "')>Chat</a>"+
+                "</td>" +
+                "</tr>" );
+        }
+    }
+
+    function mostrarChat(conver, usuario1) {
+        converSeleccionada = conver;
+        usuario = usuario1;
+        alert(usuario);
+        $( "#contenedor-principal" ).load( "widget-chat.html" );
+    }
+</script>

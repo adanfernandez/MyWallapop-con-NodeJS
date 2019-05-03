@@ -22,8 +22,8 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav" id="barra-menu">
-        <li><a onclick=widgetOfertas()>Productos</a></li>
-        <li><a onclick=widgetChat()>Chat</a></li>
+        <li><a onclick=widgetOfertas()>Productos a la venta</a></li>
+        <li><a onclick=widgetMisProductos()>Mis productos ofertados</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right" id="barra-menu-derecha">
 		<!-- Opciones de menú aqui -->
@@ -47,8 +47,8 @@
     $("#contenedor-principal").load("widget-ofertas.html");
   }
 
-  function widgetChat() {
-    $("#contenedor-principal").load("widget-chat.html");
+  function widgetMisProductos() {
+    $("#contenedor-principal").load("widget-misProductos.html");
   }
 </script>
 </body>

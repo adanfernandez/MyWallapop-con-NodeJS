@@ -31,7 +31,8 @@
             },
             dataType : 'json',
             headers : {
-                "token" : token
+                "token" : token,
+                "conversacion" : converSeleccionada
             },
             success : function(respuesta) {
                 actualizarTabla(respuesta);
@@ -59,7 +60,8 @@
             type: "POST",
             data: {
                 producto: productoSeleccionado,
-                texto: $("#enviar-mensaje").val()
+                texto: $("#enviar-mensaje").val(),
+                recep : usuario
             },
             dataType: 'json',
             headers: {

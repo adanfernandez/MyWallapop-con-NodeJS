@@ -193,13 +193,13 @@ module.exports = function(app, gestorBDUsuarios, gestorBDProductos, gestorBDMens
                                 error : "se ha producido un error obteniendo las conversaciones las conversaciones"
                             })
                         }
-                        else if(productos[0].propietario)
-                        {
-                            console.log("PROPIETARIO");
-                            console.log("conseguirCONVERSACIONES ---------------> " + typeof req.headers['conversacion']);
+                        else if(productos[0].propietario === usuario)  {
 
                             if(typeof req.headers['conversacion'] === 'undefined') {
                                 res.status(200);
+                                console.log("LLEGA HASTA AQUÍ ------>    " + conversaciones);
+                                console.log("USUARIO1 ------>    " + conversaciones[0].usuario1);
+                                console.log("USUARIO2 ------>    " + conversaciones[0].usuario2);
                                 res.send(JSON.stringify(conversaciones));
                             }
                             else if(typeof req.headers['conversacion'] !== 'undefined')

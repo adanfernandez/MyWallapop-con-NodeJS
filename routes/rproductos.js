@@ -1,34 +1,42 @@
 module.exports = function(app, swig, gestorBDProductos, gestorBDUsuarios) {
     app.post("/producto", function(req, res) {
-        var date = new Date();
-        var producto = {
-            nombre : req.body.nombre,
-            descripcion : req.body.descripcion,
-            precio : req.body.precio,
-            fecha: date.getUTCDate() + '/' + (date.getUTCMonth() + 1) + '/' + date.getFullYear(),
-            propietario : req.session.usuario,
-            comprador : null
-        };
-        gestorBDProductos.insertarProducto(producto, function(id){
-            if (id == null) {
-                res.redirect("/productos/agregar" +
-                    "?mensaje=Error al insertar el producto"+
-                    "&tipoMensaje=alert-danger ");
-            }
-            else {
-                if(req.files != null) {
-                    if (req.files.imagen != null) {
-                        var  imagen = req.files.imagen;
-                        imagen.mv('public/portadas/' + id + '.png', function(err) {
-                            if (err) {
-                                res.redirect("/tienda?mensaje=Se ha producido un error.");
-                            }
-                        });
+
+        if(req.body.nombre === '' || req.body.descripcion === '' || req.body.precio === '')
+        {
+            res.redirect("/productos/agregar" +
+                "?mensaje=Inserte los campos obligatorios" +
+                "&tipoMensaje=alert-danger ");
+        }
+        else {
+            var date = new Date();
+            var producto = {
+                nombre: req.body.nombre,
+                descripcion: req.body.descripcion,
+                precio: req.body.precio,
+                fecha: date.getUTCDate() + '/' + (date.getUTCMonth() + 1) + '/' + date.getFullYear(),
+                propietario: req.session.usuario,
+                comprador: null
+            };
+            gestorBDProductos.insertarProducto(producto, function (id) {
+                if (id == null) {
+                    res.redirect("/productos/agregar" +
+                        "?mensaje=Error al insertar el producto" +
+                        "&tipoMensaje=alert-danger ");
+                } else {
+                    if (req.files != null) {
+                        if (req.files.imagen != null) {
+                            var imagen = req.files.imagen;
+                            imagen.mv('public/portadas/' + id + '.png', function (err) {
+                                if (err) {
+                                    res.redirect("/tienda?mensaje=Se ha producido un error.");
+                                }
+                            });
+                        }
                     }
+                    res.redirect("/publicaciones");
                 }
-                res.redirect("/publicaciones");
-            }
-        });
+            });
+        }
     });
     app.get('/productos/agregar', function (req, res) {
         var respuesta = swig.renderFile('views/bagregar.html', {

@@ -58,19 +58,137 @@ module.exports = function(app, gestorBDUsuarios, gestorBDProductos, gestorBDMens
                                                         send("Error pruebas");
                                                     } else {
                                                         var usuario5 = {
-                                                            email: "esteban@esteban",
-                                                            nombre: "esteban",
-                                                            apellidos: "esteban",
+                                                            email: "admin@email.com",
+                                                            nombre: "admin",
+                                                            apellidos: "admin",
                                                             password: app.get("crypto").createHmac('sha256', app.get('clave'))
-                                                                .update("123456").digest('hex'),
-                                                            admin: false,
-                                                            dinero: parseFloat("100")
+                                                                .update("admin").digest('hex'),
+                                                            admin: true,
+                                                            dinero: 100
                                                         };
                                                         gestorBDUsuarios.insertarUsuario(usuario5, function (usuario) {
                                                             if (usuario == null) {
                                                                 res.send("Error pruebas");
                                                             } else {
-                                                                res.redirect("/inicio");
+                                                                var producto1 = {
+                                                                    nombre : "lampara",
+                                                                    descripcion : "flexo",
+                                                                    precio : 12,
+                                                                    fecha : new Date(),
+                                                                    propietario : "josefo@josefo",
+                                                                    comprador : null
+                                                                }
+                                                                gestorBDProductos.insertarProducto(producto1, function(producto){
+                                                                   if(producto == null){
+                                                                       res.send("Error pruebas");
+                                                                   }
+                                                                   else{
+                                                                       var producto2 = {
+                                                                           nombre : "ordenador",
+                                                                           descripcion : "top",
+                                                                           precio : 90,
+                                                                           fecha : new Date(),
+                                                                           propietario : "josefo@josefo",
+                                                                           comprador : null
+                                                                       }
+                                                                       gestorBDProductos.insertarProducto(producto2, function(producto){
+                                                                           if(producto == null){
+                                                                               res.send("Error pruebas");
+                                                                           }
+                                                                           else{
+                                                                               var producto3 = {
+                                                                                   nombre : "ladron",
+                                                                                   descripcion : "util",
+                                                                                   precio : 3,
+                                                                                   fecha : new Date(),
+                                                                                   propietario : "adalino@adalino",
+                                                                                   comprador : "xurdellu@xurdellu"
+                                                                               }
+                                                                               gestorBDProductos.insertarProducto(producto3, function(producto){
+                                                                                   if(producto == null){
+                                                                                       res.send("Error pruebas");
+                                                                                   }
+                                                                                   else{
+                                                                                       var producto4 = {
+                                                                                           nombre : "nokia vintage",
+                                                                                           descripcion : "guapo",
+                                                                                           precio : 63,
+                                                                                           fecha : new Date(),
+                                                                                           propietario : "diego@diego",
+                                                                                           comprador : null
+                                                                                       }
+                                                                                       gestorBDProductos.insertarProducto(producto4, function(producto){
+                                                                                           if(producto == null){
+                                                                                               res.send("Error pruebas");
+                                                                                           }
+                                                                                           else{
+                                                                                               var producto5 = {
+                                                                                                   nombre : "balon",
+                                                                                                   descripcion : "patalear",
+                                                                                                   precio : 10,
+                                                                                                   fecha : new Date(),
+                                                                                                   propietario : "xurdellu@xurdellu",
+                                                                                                   comprador : "diego@diego"
+                                                                                               }
+                                                                                               gestorBDProductos.insertarProducto(producto5, function(producto){
+                                                                                                   if(producto == null) {
+                                                                                                       res.send("Error pruebas");
+                                                                                                   }
+                                                                                                   else {
+                                                                                                       var producto6 = {
+                                                                                                           nombre : "gafas de sol",
+                                                                                                           descripcion : "ver",
+                                                                                                           precio : 50,
+                                                                                                           fecha : new Date(),
+                                                                                                           propietario : "adalino@adalino",
+                                                                                                           comprador : "josefo@josefo"
+                                                                                                       }
+                                                                                                       gestorBDProductos.insertarProducto(producto6, function(producto){
+                                                                                                           if(producto == null){
+                                                                                                               res.send("Error pruebas");
+                                                                                                           }
+                                                                                                           else {
+                                                                                                               var producto7 = {
+                                                                                                                   nombre: "radio",
+                                                                                                                   descripcion: "escuchar carrusel deportivo",
+                                                                                                                   precio: 15,
+                                                                                                                   fecha: new Date(),
+                                                                                                                   propietario: "josefo@josefo",
+                                                                                                                   comprador: "adalino@adalino"
+                                                                                                               }
+                                                                                                               gestorBDProductos.insertarProducto(producto7, function (producto) {
+                                                                                                                   if (producto == null) {
+                                                                                                                       res.send("Error pruebas");
+                                                                                                                   } else {
+                                                                                                                       var producto8 = {
+                                                                                                                           nombre: "llavero",
+                                                                                                                           descripcion: "llevar llaves",
+                                                                                                                           precio: 2,
+                                                                                                                           fecha: new Date(),
+                                                                                                                           propietario: "diego@diego",
+                                                                                                                           comprador: null
+                                                                                                                       }
+                                                                                                                       gestorBDProductos.insertarProducto(producto8, function (producto) {
+                                                                                                                           if (producto == null) {
+                                                                                                                               res.send("Error pruebas");
+                                                                                                                           } else {
+                                                                                                                               res.redirect("/inicio");
+                                                                                                                           }
+                                                                                                                       });
+                                                                                                                   }
+                                                                                                               });
+                                                                                                           }
+                                                                                                       });
+                                                                                                   }
+                                                                                               });
+                                                                                           }
+                                                                                       });
+                                                                                   }
+                                                                               });
+                                                                           }
+                                                                       });
+                                                                   }
+                                                                });
                                                             }
                                                         });
                                                     }

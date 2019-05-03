@@ -46,28 +46,35 @@ module.exports = function(app, swig, gestorBDUsuarios, gestorBDProductos) {
         });
     });
     app.post("/identificarse", function(req, res) {
-        var seguro = app.get("crypto").createHmac('sha256', app.get('clave'))
-            .update(req.body.password).digest('hex');
-        var criterio = {
-            email : req.body.email,
-            password : seguro
-        };
-        gestorBDUsuarios.obtenerUsuarios(criterio, function(usuarios) {
-            if (usuarios == null || usuarios.length == 0) {
-                req.session.usuario = null;
-                res.redirect("/identificarse" +
-                    "?mensaje=Email o password incorrecto"+
-                    "&tipoMensaje=alert-danger ");
-            } else {
-                req.session.usuario = usuarios[0].email;
-                req.session.dinero = usuarios[0].dinero,
-                res.redirect("/tienda");
-            }
-        });
+        if(req.body.password === '' || req.body.email === '')
+        {
+            res.redirect("/identificarse?mensaje=No puede haber campos vacíos")
+        }
+        else
+        {
+            var seguro = app.get("crypto").createHmac('sha256', app.get('clave'))
+                .update(req.body.password).digest('hex');
+            var criterio = {
+                email : req.body.email,
+                password : seguro
+            };
+            gestorBDUsuarios.obtenerUsuarios(criterio, function(usuarios) {
+                if (usuarios == null || usuarios.length == 0) {
+                    req.session.usuario = null;
+                    res.redirect("/identificarse" +
+                        "?mensaje=Email o password incorrecto"+
+                        "&tipoMensaje=alert-danger ");
+                } else {
+                    req.session.usuario = usuarios[0].email;
+                    req.session.dinero = usuarios[0].dinero,
+                        res.redirect("/tienda");
+                }
+            });
+        }
     });
     app.get('/desconectarse', function (req, res) {
         req.session.usuario = null;
-        res.redirect("/inicio");
+        res.redirect("/identificarse");
     });
     app.get('/admin', function (req, res) {
         var criterio = {

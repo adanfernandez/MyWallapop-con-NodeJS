@@ -5,7 +5,6 @@ module.exports = function(app, gestorBDProductos) {
         var criterio = {
             propietario : { $nin : [res.usuario]},
             comprador : null
-
         };
         gestorBDProductos.obtenerProductos( criterio, function(productos) {
             if (productos == null) {

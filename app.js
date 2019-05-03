@@ -156,6 +156,7 @@ require("./routes/rusuarios.js")(app, swig, gestorBDUsuarios, gestorBDProductos)
 require("./routes/rproductos.js")(app, swig, gestorBDProductos, gestorBDUsuarios);
 require("./routes/rapiproductos.js")(app, gestorBDProductos);
 require("./routes/raplicaciones.js")(app, gestorBDUsuarios, gestorBDProductos, gestorBDMensajes);
+require("./routes/rtesting.js")(app, gestorBDUsuarios, gestorBDProductos, gestorBDMensajes);
 // lanzar el servidor
 app.listen(app.get('port'), function() {
     console.log("Servidor activo");

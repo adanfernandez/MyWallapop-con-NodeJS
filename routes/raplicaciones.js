@@ -86,7 +86,7 @@ module.exports = function(app, gestorBDUsuarios, gestorBDProductos, gestorBDMens
                                 "emisor" : usuario,
                                 "texto" : texto,
                                 "leido" : false,
-                                "fecha" : date.getUTCDate() + '/' + (date.getUTCMonth() + 1) + '/' + date.getFullYear(),
+                                "fecha" : date,
                                 "conversacion" : id_conversacion
                             };
                             gestorBDMensajes.insertarMensaje(criterio_mensaje, function (mensajes) {
@@ -99,7 +99,7 @@ module.exports = function(app, gestorBDUsuarios, gestorBDProductos, gestorBDMens
                                 else  {
                                     res.status(201);
                                     res.json({
-                                        error : "Mensaje enviado"
+                                        mensaje : "Mensaje enviado"
                                     })
                                 }
                             });
@@ -117,7 +117,7 @@ module.exports = function(app, gestorBDUsuarios, gestorBDProductos, gestorBDMens
                                         "emisor" : usuario,
                                         "texto" : texto,
                                         "leido" : false,
-                                        "fecha" : date.getUTCDate() + '/' + (date.getUTCMonth() + 1) + '/' + date.getFullYear(),
+                                        "fecha" : date,
                                         "conversacion" : convers
                                     };
                                     gestorBDMensajes.insertarMensaje(criterio_mensaje, function (mensajes) {
@@ -194,12 +194,8 @@ module.exports = function(app, gestorBDUsuarios, gestorBDProductos, gestorBDMens
                             })
                         }
                         else if(productos[0].propietario === usuario)  {
-
                             if(typeof req.headers['conversacion'] === 'undefined') {
                                 res.status(200);
-                                console.log("LLEGA HASTA AQUÍ ------>    " + conversaciones);
-                                console.log("USUARIO1 ------>    " + conversaciones[0].usuario1);
-                                console.log("USUARIO2 ------>    " + conversaciones[0].usuario2);
                                 res.send(JSON.stringify(conversaciones));
                             }
                             else if(typeof req.headers['conversacion'] !== 'undefined')
@@ -208,7 +204,6 @@ module.exports = function(app, gestorBDUsuarios, gestorBDProductos, gestorBDMens
                                 var criterio_mensajes = {
                                     "conversacion": gestorBDMensajes.mongo.ObjectID(conversacion)
                                 };
-                                console.log("CRITERIO MENSAJE --------->   " + criterio_mensajes);
                                 gestorBDMensajes.obtenerMensajes(criterio_mensajes, function (mensajes) {
                                     if (mensajes == null) {
                                         res.status(501);

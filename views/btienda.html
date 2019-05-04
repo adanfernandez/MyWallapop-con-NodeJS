@@ -24,7 +24,6 @@
     <div>
         <hr size="20px" color="black" />
         <div style="width: 200px">
-
             <div >
                 <div>
                     <a href="/producto/{{ producto._id.toString() }}">
@@ -41,7 +40,8 @@
                             {% if producto.comprador == null && producto.propietario != usuario %}
                             <a class="btn btn-primary pull-center"
                                href="/producto/comprar/{{producto._id.toString()}}"
-                               class="btn btn-primary pull-center">Comprar</a>
+                               class="btn btn-primary pull-center"
+                                id ="comprar/{{producto.nombre}}">Comprar</a>
                             {% endif %}
                         </div>
                         <!-- http://www.socicon.com/generator.php -->

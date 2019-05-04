@@ -21,8 +21,8 @@
 		{% for producto in productos %}
 			<tr>
 				<td>{{ producto.nombre }}</td>
-				<td><a href="/producto/modificar/{{ producto._id.toString() }}"">Modificar</a> <br>
-					<a href="/producto/eliminar/{{ producto._id.toString() }}">Eliminar</a> <br>
+				<td><a href="/producto/modificar/{{ producto._id.toString() }}">Modificar</a> <br>
+					<a href="/producto/eliminar/{{ producto._id.toString() }}" id="eliminar/{{producto.nombre}}">Eliminar</a> <br>
 			    </td>
 			</tr>
 		{% endfor %}

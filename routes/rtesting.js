@@ -86,7 +86,7 @@ module.exports = function(app, gestorBDUsuarios, gestorBDProductos, gestorBDMens
                                                                        var producto2 = {
                                                                            nombre : "ordenador",
                                                                            descripcion : "top",
-                                                                           precio : 90,
+                                                                           precio : 100,
                                                                            fecha : new Date(),
                                                                            propietario : "josefo@josefo",
                                                                            comprador : null
@@ -110,9 +110,9 @@ module.exports = function(app, gestorBDUsuarios, gestorBDProductos, gestorBDMens
                                                                                    }
                                                                                    else{
                                                                                        var producto4 = {
-                                                                                           nombre : "nokia vintage",
+                                                                                           nombre : "nokia",
                                                                                            descripcion : "guapo",
-                                                                                           precio : 63,
+                                                                                           precio : 101,
                                                                                            fecha : new Date(),
                                                                                            propietario : "diego@diego",
                                                                                            comprador : null
@@ -136,7 +136,7 @@ module.exports = function(app, gestorBDUsuarios, gestorBDProductos, gestorBDMens
                                                                                                    }
                                                                                                    else {
                                                                                                        var producto6 = {
-                                                                                                           nombre : "gafas de sol",
+                                                                                                           nombre : "gafas",
                                                                                                            descripcion : "ver",
                                                                                                            precio : 50,
                                                                                                            fecha : new Date(),

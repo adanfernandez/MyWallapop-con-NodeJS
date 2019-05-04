@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ee39ea3f-8d3c-4982-9ba7-7c87f1cd4268" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/routes/rproductos.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/rproductos.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/rtesting.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/rtesting.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/bagregar.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/bagregar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/bpublicaciones.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/bpublicaciones.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/btienda.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/btienda.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,19 +20,22 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/rproductos.js">
+        <entry file="file://$PROJECT_DIR$/views/btienda.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="6" column="57" selection-start-line="6" selection-start-column="57" selection-end-line="6" selection-end-column="57" />
+            <state relative-caret-position="989">
+              <caret line="43" column="34" selection-start-line="43" selection-start-column="34" selection-end-line="43" selection-end-column="34" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/rtesting.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-100">
-              <caret line="179" column="108" selection-start-line="179" selection-start-column="108" selection-end-line="179" selection-end-column="108" />
+            <state relative-caret-position="69">
+              <caret line="112" column="106" selection-start-line="112" selection-start-column="106" selection-end-line="112" selection-end-column="106" />
             </state>
           </provider>
         </entry>
@@ -38,20 +43,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-166">
-              <caret line="29" column="52" lean-forward="true" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="52" />
+            <state relative-caret-position="368">
+              <caret line="57" column="36" lean-forward="true" selection-start-line="57" selection-start-column="36" selection-end-line="57" selection-end-column="36" />
               <folding>
                 <element signature="n#style#0;n#p#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/views/bagregar.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-422">
-              <caret line="9" column="55" selection-start-line="9" selection-start-column="55" selection-end-line="9" selection-end-column="55" />
             </state>
           </provider>
         </entry>
@@ -68,9 +64,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Date</find>
-      <find>api</find>
-      <find>no hay</find>
       <find>mensajes</find>
       <find>no hay token</find>
       <find>[0]</find>
@@ -98,6 +91,9 @@
       <find>date</find>
       <find>rtesting</find>
       <find>identificarse</find>
+      <find>tr</find>
+      <find>th</find>
+      <find>hr</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -107,13 +103,11 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/views/bregistro.html" />
-        <option value="$PROJECT_DIR$/views/bpublicaciones.html" />
         <option value="$PROJECT_DIR$/views/tienda.html" />
         <option value="$PROJECT_DIR$/views/bproducto.html" />
         <option value="$PROJECT_DIR$/views/bproductoModificar.html" />
         <option value="$PROJECT_DIR$/views/blistarUsuarios.html" />
         <option value="$PROJECT_DIR$/modules/gestorBDUsuarios.js" />
-        <option value="$PROJECT_DIR$/views/btienda.html" />
         <option value="$PROJECT_DIR$/modules/gestorBDProductos.js" />
         <option value="$PROJECT_DIR$/public/widget-login.js" />
         <option value="$PROJECT_DIR$/public/widget-login.html" />
@@ -131,14 +125,16 @@
         <option value="$PROJECT_DIR$/modules/gestorBDMensajes.js" />
         <option value="$PROJECT_DIR$/views/bidentificacion.html" />
         <option value="$PROJECT_DIR$/routes/rusuarios.js" />
-        <option value="$PROJECT_DIR$/routes/rtesting.js" />
-        <option value="$PROJECT_DIR$/views/base.html" />
         <option value="$PROJECT_DIR$/routes/rproductos.js" />
         <option value="$PROJECT_DIR$/views/bagregar.html" />
+        <option value="$PROJECT_DIR$/views/bpublicaciones.html" />
+        <option value="$PROJECT_DIR$/views/btienda.html" />
+        <option value="$PROJECT_DIR$/views/base.html" />
+        <option value="$PROJECT_DIR$/routes/rtesting.js" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="697" />
@@ -149,7 +145,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -181,6 +176,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -226,12 +222,13 @@
       <workItem from="1556392796501" duration="638000" />
       <workItem from="1556642926190" duration="35507000" />
       <workItem from="1556791474613" duration="24653000" />
-      <workItem from="1556866992284" duration="33028000" />
+      <workItem from="1556866992284" duration="33336000" />
+      <workItem from="1556983821330" duration="3938000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="135611000" />
+    <option name="totallyTimeSpent" value="139857000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -244,6 +241,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="1" side_tool="true" />
@@ -257,7 +255,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32991454" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32991454" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49925596" visible="true" weight="0.2017094" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49925596" weight="0.18461539" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50074404" side_tool="true" weight="0.051282052" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -276,7 +274,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32991454" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32991454" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49925596" visible="true" weight="0.25982907" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49925596" visible="true" weight="0.18461539" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50074404" side_tool="true" weight="0.051282052" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -291,13 +289,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="182">
           <caret line="248" column="16" selection-start-line="248" selection-start-column="16" selection-end-line="248" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/tienda.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" column="22" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -336,20 +327,7 @@
     <entry file="file://$PROJECT_DIR$/public/bpublicaciones.html" />
     <entry file="file://$PROJECT_DIR$/public/bcompras.html" />
     <entry file="file://$PROJECT_DIR$/public/bcancionModificar.html" />
-    <entry file="file://$PROJECT_DIR$/views/bpublicaciones.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="24" column="91" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="91" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/widget-conversaciones.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="19" lean-forward="true" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/public/widget-conversaciones.js" />
     <entry file="file://$PROJECT_DIR$/public/widget-misProductos.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="409">
@@ -448,16 +426,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/btienda.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" column="13" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="13" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/modules/gestorBDProductos.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="64">
@@ -479,23 +447,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/rtesting.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-100">
-          <caret line="179" column="108" selection-start-line="179" selection-start-column="108" selection-end-line="179" selection-end-column="108" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-166">
-          <caret line="29" column="52" lean-forward="true" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="52" />
-          <folding>
-            <element signature="n#style#0;n#p#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/rproductos.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
@@ -503,10 +454,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/tienda.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" column="22" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/views/bagregar.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-422">
+        <state relative-caret-position="23">
           <caret line="9" column="55" selection-start-line="9" selection-start-column="55" selection-end-line="9" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/bpublicaciones.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="34" column="31" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="57" column="36" lean-forward="true" selection-start-line="57" selection-start-column="36" selection-end-line="57" selection-end-column="36" />
+          <folding>
+            <element signature="n#style#0;n#p#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/btienda.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="989">
+          <caret line="43" column="34" selection-start-line="43" selection-start-column="34" selection-end-line="43" selection-end-column="34" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/rtesting.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="112" column="106" selection-start-line="112" selection-start-column="106" selection-end-line="112" selection-end-column="106" />
         </state>
       </provider>
     </entry>

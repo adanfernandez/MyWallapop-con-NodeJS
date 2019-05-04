@@ -6,6 +6,7 @@ module.exports = function(app, gestorBDProductos) {
             propietario : { $nin : [res.usuario]},
             comprador : null
         };
+
         gestorBDProductos.obtenerProductos( criterio, function(productos) {
             if (productos == null) {
                 res.status(500);
@@ -24,9 +25,6 @@ module.exports = function(app, gestorBDProductos) {
         var criterio = {
             propietario : res.usuario
         };
-
-        console.log("USUARIO AUTENTIFICADO:  -->  " + res.usuario);
-
         gestorBDProductos.obtenerProductos( criterio, function(productos) {
             if (productos == null) {
                 res.status(500);

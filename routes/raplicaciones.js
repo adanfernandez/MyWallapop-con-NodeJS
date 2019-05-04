@@ -18,7 +18,7 @@ module.exports = function(app, gestorBDUsuarios, gestorBDProductos, gestorBDMens
                     .sign(
                         {usuario: criterio.email , tiempo: Date.now()/1000},
                         "secreto");
-
+                req.session.usuario = req.body.email;
                 res.status(200);
                 res.json({
                     autenticado : true,
@@ -40,7 +40,6 @@ module.exports = function(app, gestorBDUsuarios, gestorBDProductos, gestorBDMens
                 "_id" : gestorBDProductos.mongo.ObjectID(producto)
             };
             gestorBDProductos.obtenerProductos(criterio_producto, function(productos){
-                console.log(productos);
                 if(productos == null)
                 {
                     res.status(500);

@@ -62,8 +62,8 @@ module.exports = function(app, swig, gestorBDProductos, gestorBDUsuarios) {
             if (productos == null) {
                 res.send("Error al listar ");
             } else {
-                var ultimaPg = total/4;
-                if (total % 4 > 0 ){ // Sobran decimales
+                var ultimaPg = total/5;
+                if (total % 5 > 0 ){ // Sobran decimales
                     ultimaPg = ultimaPg+1;
                 }
                 var paginas = []; // paginas mostrar

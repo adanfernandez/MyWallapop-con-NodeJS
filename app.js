@@ -1,6 +1,13 @@
 // Módulos
 var express = require('express');
 var app = express();
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Credentials", "true");
+    res.header("Access-Control-Allow-Methods", "POST, GET, DELETE, UPDATE, PUT");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, token");
+    next();
+});
 var jwt = require('jsonwebtoken');
 app.set('jwt',jwt);
 var expressSession = require('express-session');
@@ -23,10 +30,8 @@ var gestorBDMensajes = require("./modules/gestorBDMensajes.js");
 gestorBDProductos.init(app, mongo);
 gestorBDUsuarios.init(app, mongo);
 gestorBDMensajes.init(app, mongo);
-// routerUsuarioSession
 var routerCompras = express.Router();
 routerCompras.use(function(req, res, next) {
-    console.log("routerUsuarioSession");
     if ( req.session.usuario ) {
         if( req.session.usuario != 'admin@email.com'){
             next();
@@ -65,7 +70,6 @@ routerUsuarioPropietario.use(function(req, res, next) {
     var id = path.basename(req.originalUrl);
     gestorBDProductos.obtenerProductos(
         {_id: mongo.ObjectID(id) }, function (productos) {
-            console.log(productos[0]);
             if(productos[0].propietario == req.session.usuario ){
                 next();
             } else {
@@ -128,6 +132,12 @@ app.use("/inicio",routerAnonimo);
 //Solo podrán modificar y eliminar productos sus propietarios
 app.use("/producto/modificar",routerUsuarioPropietario);
 app.use("/producto/eliminar",routerUsuarioPropietario);
+var routerLogger = express.Router();
+routerLogger.use(function (req, res, next) {
+    console.log("USUARIO: " + req.session.usuario + ":  " + req.originalUrl);
+    next();
+});
+app.use("/", routerLogger);
 app.use(express.static('public'));
 app.get('/', function (req, res) {
     if(req.session.usuario)

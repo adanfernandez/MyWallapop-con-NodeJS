@@ -172,7 +172,33 @@ module.exports = function(app, gestorBDUsuarios, gestorBDProductos, gestorBDMens
                                                                                                                            if (producto == null) {
                                                                                                                                res.send("Error pruebas");
                                                                                                                            } else {
-                                                                                                                               res.redirect("/inicio");
+                                                                                                                               
+                                                                                                                               var conversacion = {
+                                                                                                                                    "usuario1" :  "adalino@adalino",
+                                                                                                                                    "usuario2" : "diego@diego",
+                                                                                                                                    "producto" : producto.toString()
+                                                                                                                               };
+                                                                                                                               gestorBDMensajes.insertarConversacion(conversacion, function (conversacion) {
+                                                                                                                                    if(conversacion === null) {
+                                                                                                                                        res.send("Error pruebas");
+                                                                                                                                    } else{
+                                                                                                                                        var mensaje = {
+                                                                                                                                            "emisor" : "adalino@adalino",
+                                                                                                                                            "texto" : "Hola. Estoy interesado",
+                                                                                                                                            "leido" : false,
+                                                                                                                                            "fecha" : new Date(),
+                                                                                                                                            "conversacion" : conversacion
+                                                                                                                                        };
+                                                                                                                                        gestorBDMensajes.insertarMensaje(mensaje, function (mensaje) {
+                                                                                                                                            if(mensaje === null) {
+                                                                                                                                                res.send("Error pruebas");
+                                                                                                                                            }
+                                                                                                                                            else {
+                                                                                                                                                res.redirect("/inicio");
+                                                                                                                                            }
+                                                                                                                                        });
+                                                                                                                                    }
+                                                                                                                               });
                                                                                                                            }
                                                                                                                        });
                                                                                                                    }

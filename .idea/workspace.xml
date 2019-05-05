@@ -3,61 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ee39ea3f-8d3c-4982-9ba7-7c87f1cd4268" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/cliente.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/cliente.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/portadas/5cb300424999df3df8f3b81b.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/portadas/5cb300624999df3df8f3b81c.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/portadas/5cb30207f714d02840ca544e.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/portadas/5cb3078bed2a772d74214349.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/portadas/5cb307a9ed2a772d7421434a.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/portadas/5cb30aa41e3e16052c3f3f0d.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/portadas/5cb30adfd4489034486a9ba2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/portadas/5cb30bfbe168ef07f885a3b5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/portadas/5cb30de129768902403a370d.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/portadas/5cb30f2aaabb74239ce0e5f8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/portadas/5cb30f818fa4e62bc80d6b8d.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/portadas/5cb30ff947d13136b8dfff9c.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/portadas/5cb3107da8a9dc2dc4732e73.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/portadas/5cb310e94e2eb93c187130b2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/portadas/5cb31144febb8c40acbf1392.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/portadas/5cb312ce15fe2a1e6c3b41aa.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/portadas/5cb3132b01147c3cb8624fd1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/portadas/5cb3187c395fcd1708009922.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/portadas/5cb31e2944135235b81e75ef.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/portadas/5cb31f20d30e810878d3dbb9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/portadas/5cb31f6a0e384137b4b9fb02.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/portadas/5cb3207c3356b10f0c42d74c.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/portadas/5cb361d926e5822f28b8f6f7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/portadas/5cb449383a8b7504aceeeef7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/portadas/5cb4556746a0e843047776e4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/portadas/5cb46440fd79eb141cc7aa20.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/portadas/5cb59f5fe3977c21a4a4d05b.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/portadas/5cb5a133260f83136c92fdc9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/portadas/5cc1c7847da4d0300c764c72.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/portadas/5cc1dc544349311360a0598c.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/portadas/5cc1f19d122f4c0cf41784d0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/portadas/5cc1f23a0d16f7105889109e.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/portadas/5cc1f29e0d16f710588910a0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/portadas/5cc1f4f7331d8a2f08fe9348.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/portadas/5cc1f588331d8a2f08fe934b.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/portadas/5cc1f7a9e5487e06e087cce0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/portadas/5cc1f8d5e5487e06e087cce3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/portadas/5cc1fa3be5487e06e087cce5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/portadas/5cc1fd599c12e2069c83ece2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/portadas/5cc2099ea9fb1b0c7cadd99c.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/portadas/5cc228a97eecd441e4ab6d5b.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/portadas/5cc22976d2dd6d23888126c2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/portadas/5cc2be9cb502ea432071cf10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/portadas/5cc2d1573df0b31f00cd46d6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/portadas/5cc2d1c23df0b31f00cd46d9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/portadas/5cc2d6427043ad2768e63317.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/portadas/5ccb6458a4452e49e04ac5fd.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/widget-login.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/widget-login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/rapiproductos.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/rapiproductos.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/raplicaciones.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/raplicaciones.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/rproductos.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/rproductos.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/rtesting.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/rtesting.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/bproducto.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/bproducto.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/portadas/5cce07f2e786f29b9c3bf36d.png" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -69,35 +15,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/rproductos.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="644">
-              <caret line="40" column="31" selection-start-line="40" selection-start-column="14" selection-end-line="40" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="133" column="53" selection-start-line="133" selection-start-column="29" selection-end-line="133" selection-end-column="53" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/routes/rusuarios.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1748">
-              <caret line="76" column="36" selection-start-line="76" selection-start-column="36" selection-end-line="76" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -190,43 +108,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="sdi-actividad2-204" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sdi-actividad2-204" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sdi-actividad2-204" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sdi-actividad2-204" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sdi-actividad2-204" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sdi-actividad2-204" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sdi-actividad2-204" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sdi-actividad2-204" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="portadas" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sdi-actividad2-204" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sdi-actividad2-204" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sdi-actividad2-204" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sdi-actividad2-204" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
+      <pane id="ProjectPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -234,7 +116,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="jsx.switch.disabled" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../entrega/sdi-actividad2-204" />
     <property name="settings.editor.selected.configurable" value="reference.settings.deploy.options" />
   </component>
   <component name="RecentsManager">
@@ -275,12 +157,12 @@
       <workItem from="1556642926190" duration="35507000" />
       <workItem from="1556791474613" duration="24653000" />
       <workItem from="1556866992284" duration="33336000" />
-      <workItem from="1556983821330" duration="21240000" />
+      <workItem from="1556983821330" duration="23952000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="157159000" />
+    <option name="totallyTimeSpent" value="159871000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -293,11 +175,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="1" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="2" weight="0.1376488" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.1376488" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32991454" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -307,7 +188,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32991454" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32991454" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49925596" weight="0.08034188" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49925596" visible="true" weight="0.051282052" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50074404" side_tool="true" weight="0.051282052" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -474,13 +355,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/rapiproductos.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/raplicaciones.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="577">
@@ -556,8 +430,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/rusuarios.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1748">
+        <state relative-caret-position="823">
           <caret line="76" column="36" selection-start-line="76" selection-start-column="36" selection-end-line="76" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/portadas/5ccebe69e786f29b9c3bf545.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/rapiproductos.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="36" column="13" lean-forward="true" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
         </state>
       </provider>
     </entry>
